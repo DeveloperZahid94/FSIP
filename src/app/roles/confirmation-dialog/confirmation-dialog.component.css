@@ -1,0 +1,15 @@
+button {
+    height: 70px;
+    border-radius: 0px;
+    margin:0px !important;
+  }
+  .mat-dialog-actions{
+    align-items:normal;
+    padding-bottom:0px;
+  }
+  .mat-dialog-title{
+    font-size: 2em;
+    padding:5%;
+    color: #5b5b5b;
+  }
+  

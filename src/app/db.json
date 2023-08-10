@@ -1,0 +1,83 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Roles": [
+    {
+      "id": 5,
+      "roleName": "testing new ",
+      "description": "test",
+      "created_At": "2023-08-08T05:40:32.886Z",
+      "updated_At": "2023-08-08T07:29:51.865Z",
+      "isActive": "Yes"
+    },
+    {
+      "id": 6,
+      "roleName": "testing new ",
+      "description": "test",
+      "created_At": "2023-08-08T05:40:32.886Z",
+      "updated_At": "2023-08-08T16:14:24.578Z",
+      "isActive": "Yes"
+    },
+    {
+      "id": 7,
+      "roleName": "test1",
+      "description": "test",
+      "created_At": "2023-08-08T05:41:19.374Z",
+      "updated_At": null,
+      "isActive": "Yes"
+    },
+    {
+      "id": 8,
+      "roleName": "test zahid",
+      "description": "testing data",
+      "created_At": "2023-08-08T05:41:29.850Z",
+      "updated_At": null,
+      "isActive": "Yes"
+    },
+    {
+      "id": 9,
+      "roleName": "test",
+      "description": "test desc",
+      "created_At": "2023-08-08T06:06:52.776Z",
+      "updated_At": null,
+      "isActive": "Yes"
+    },
+    {
+      "id": 10,
+      "roleName": "test",
+      "description": "test",
+      "created_At": "2023-08-08T06:07:40.974Z",
+      "updated_At": null,
+      "isActive": "Yes"
+    },
+    {
+      "id": 11,
+      "roleName": "test",
+      "description": "test",
+      "created_At": "2023-08-08T06:39:28.512Z",
+      "updated_At": null,
+      "isActive": "Yes"
+    }
+  ],
+  "Users": {
+    "id": null,
+    "userName": "zahid",
+    "firstName": "zahid",
+    "lastName": "anjum",
+    "email": "z@gmail.com",
+    "phone": "123456789",
+    "domainName": "test domain",
+    "countryCode": "option",
+    "currencyCode": "option",
+    "createdAt": "2023-08-09T09:23:44.653Z",
+    "updatedAt": null,
+    "timeZone": "ist",
+    "defaultRoleId": "option",
+    "isActive": null
+  }
+}

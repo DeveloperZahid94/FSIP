@@ -1,0 +1,171 @@
+<div class="container mt-3">
+  <form [formGroup]="userForm">
+    <div class="p-2">
+      <h1>{{this.data.Action}} USERS</h1><hr>
+  </div>
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>User Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter UserName"
+            name="userName"
+            formControlName="userName"
+            required
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Enter Email"
+            name="email"
+            formControlName="email"
+            required
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter First Name"
+            name="firstName"
+            formControlName="firstName"
+            required
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>Last Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter Last Name"
+            name="lastName"
+            formControlName="lastName"
+            required
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>Domain Name</mat-label>
+          <input
+            matInput
+            placeholder="Enter Domain Name"
+            name="domainName"
+            formControlName="domainName"
+            required
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>Phone</mat-label>
+          <input
+            matInput
+            placeholder="Enter phone"
+            name="phone"
+            formControlName="phone"
+            required
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>Select Country Code</mat-label>
+          <mat-select 
+          name="countryCode"
+          formControlName="countryCode"
+          required
+          >
+            <mat-option value="option">91</mat-option>
+            <mat-option value="option">93</mat-option>
+            <mat-option value="option">54</mat-option>
+            <mat-option value="option">61</mat-option>
+
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>Select Role</mat-label>
+          <mat-select 
+          name="defaultRoleId"
+          formControlName="defaultRoleId"
+          required
+          >
+            <mat-option value="option">R1</mat-option>
+            <mat-option value="option">R2</mat-option>
+            <mat-option value="option">R3</mat-option>
+            <mat-option value="option">R4</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>Time-Zone</mat-label>
+          <input
+            matInput
+            placeholder="Enter Time Zone"
+            name="timeZone"
+            formControlName="timeZone"
+            required
+          />
+          <mat-icon matSuffix>edit</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" id="txtFormElements">
+          <mat-label>Select Currency Code</mat-label>
+          <mat-select 
+          name="currencyCode"
+          formControlName="currencyCode"
+          required
+          >
+            <mat-option value="option">AUD</mat-option>
+            <mat-option value="option">EUR</mat-option>
+            <mat-option value="option">AZN</mat-option>
+            <mat-option value="option">BSD</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+<hr>
+    <div class="Action"> 
+      <button mat-raised-button id="primaryColor" [disabled]="!userForm.valid" (click)="addUpdateRole()" class="float-end p-3">
+          <mat-icon>add</mat-icon>
+          {{this.data.Action}} And Continue
+      </button>
+      <button mat-raised-button id="dangerColor" (click)="closeDialog()" class="float-end p-3">
+          <mat-icon>cancel</mat-icon>
+          Cancel
+      </button>
+ </div>
+  </form>
+</div>
