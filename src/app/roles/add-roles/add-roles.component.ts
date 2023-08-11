@@ -49,7 +49,7 @@ export class AddRolesComponent implements OnInit {
   */
   public addUpdateRole(){
     console.log(this.rolesForm.value);
-    if(this.data.Action==='Add'){
+    if(this.data.Action==='ADD'){
       this.addRole();
     }else{
       this.updateRole();

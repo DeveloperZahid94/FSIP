@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserServiceService {
-  public baseUrl="http://localhost:3000";
+  public baseUrl="http://localhost:3000";     ///Temporary Need To Be pushed To Env
 
   constructor(private _http:HttpClient) { }
 
@@ -19,6 +19,16 @@ export class UserServiceService {
   postUsers(data:any):Observable<any>{
     const url=`${this.baseUrl}/Users`;
     return this._http.post(url,data);
+  }
+
+  updateUsers(id:number,data:any):Observable<any>{
+    const url=`${this.baseUrl}/Users/${id}`;
+    return this._http.put(url,data);
+  }
+
+  deleteUsers(id:number):Observable<any>{
+    const url=`${this.baseUrl}/Users/${id}`;
+    return this._http.delete(url);
   }
 
 

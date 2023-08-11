@@ -11,11 +11,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatRadioModule} from '@angular/material/radio';
 import { AddEditUserDialogComponent } from './add-edit-user-dialog/add-edit-user-dialog.component';
+import { LayoutModule } from '../layout/layout.module';
+
 
 
 
@@ -32,9 +34,10 @@ import { AddEditUserDialogComponent } from './add-edit-user-dialog/add-edit-user
     FormsModule,ReactiveFormsModule,
     MatInputModule,MatFormFieldModule,
     MatSelectModule,MatIconModule,MatButtonModule,
-    MatDialogModule,MatToolbarModule,
+    MatDialogModule,
     MatPaginatorModule, MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,MatRadioModule,
+    LayoutModule
   ]
 })
 export class UsersModule { }

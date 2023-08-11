@@ -3,21 +3,17 @@
         <div class="col-12">
             <form [formGroup]="rolesForm">
                 <div class="card border border-0">
-                    <!-- <div class="card-header"> -->
                         <div class="p-2">
-                            <h1>{{actionMessage}} ROLES</h1><hr>
+                            <h1><b>{{actionMessage}} ROLES</b></h1><hr>
                         </div>
-                    <!-- </div> -->
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-8">
-                                <p>
-                                    <mat-form-field appearance="fill" id="txtFormElements">
+                                    <mat-form-field appearance="outline" id="txtFormElements">
                                       <mat-label>Role Name</mat-label>
                                       <input matInput placeholder="Enter Role Name" name="roleName" formControlName="roleName" required>
                                       <mat-icon matSuffix>edit</mat-icon>
                                     </mat-form-field>
-                                </p>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-check form-check-inline mt-3">
@@ -30,21 +26,19 @@
                                   </div>
                             </div>
                         </div>
-
-                        <p>
-                            <mat-form-field appearance="fill" id="txtFormElements" >
+                            <mat-form-field appearance="outline" id="txtFormElements" >
                               <mat-label>Role Description</mat-label>
-                              <input matInput name="description" formControlName="description" placeholder="Enter Description" required>
+                              <textarea matInput name="description" formControlName="description" placeholder="Enter Description" required></textarea>
                               <mat-icon matSuffix>edit</mat-icon>
                             </mat-form-field>
-                        </p>
                     </div>
+                    <hr>
                     <div class="Action"> 
                         <button mat-raised-button id="primaryColor" [disabled]="!rolesForm.valid" (click)="addUpdateRole()" class="float-end p-3">
                             <mat-icon>add</mat-icon>
                             {{actionMessage}} And Continue
                         </button>
-                        <button mat-raised-button id="dangerColor" (click)="closeDialog()" class="float-end p-3">
+                        <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
                             <mat-icon>cancel</mat-icon>
                             Cancel
                         </button>

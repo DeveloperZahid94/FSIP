@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -6,6 +6,7 @@ import { SnackBarServiceService } from 'src/app/Core/snack-bar-service.service';
 import { RolesServiceService } from 'src/app/roles/roles-service.service';
 import { AddEditUserDialogComponent } from '../add-edit-user-dialog/add-edit-user-dialog.component';
 import { ConfirmationDialogComponent } from 'src/app/roles/confirmation-dialog/confirmation-dialog.component';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-view-user-list',
@@ -17,24 +18,28 @@ export class ViewUserListComponent implements OnInit{
   constructor(
     private dialog: MatDialog,
     private _rolesService:RolesServiceService,
-    private _sBService:SnackBarServiceService 
+    private _userService:UserServiceService,
+    private _sBService:SnackBarServiceService,
+    private cdr: ChangeDetectorRef
     ){}
     
-  displayedColumns: string[] = ['id', 'roleName', 'description', 'created_At','updated_At','isActive','Action'];
+   displayedColumns: string[] = ['userName', 'firstName', 'lastName','email','phone','countryCode','locationCode','manager','Action'];
+   //displayedColumns: string[] = ['id', 'userName', 'firstName', 'lastName'];
+  
   dataSource= new MatTableDataSource<any>;
-
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngOnInit(){
-    this.RoleList();
+    this.userList();
   }
 
 
-  private RoleList(){
-    this._rolesService.getRoles().subscribe(res=>{
+  private userList(){
+    this._userService.getUsers().subscribe(res=>{
       console.log(res);
       this.dataSource=new MatTableDataSource(res);
-      this.dataSource.paginator=this.paginator;
+      this.cdr.detectChanges(); // Trigger change detection
+      //this.dataSource.paginator=this.paginator;
     },err=>{
       console.log(err);
     })
@@ -44,23 +49,23 @@ export class ViewUserListComponent implements OnInit{
    * Method To Open Dialog For Add/Edit Roles based on Action passed  
   */
   public userAction(event:string,ele:any){
-    return this.dialog.open(AddEditUserDialogComponent, {width: '50%', height: '60%',data:{Action:event,dataObj:ele}}).afterClosed()
+    return this.dialog.open(AddEditUserDialogComponent, {width: '90%', height: '100%',data:{Action:event,dataObj:ele}}).afterClosed()
       .subscribe(res => {
         if(res){
-          this.RoleList();
+          this.userList();
         }
           
       });
   }
 
   public deleteUser(id:number){
-    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '20%',data:{Message:'Delete Role'}}).afterClosed()
+    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '32%',data:{Message:'Delete User'}}).afterClosed()
       .subscribe(res => {
         if(res==='Yes'){
-          this._rolesService.deleteRoles(id).subscribe(res=>{
+          this._userService.deleteUsers(id).subscribe(res=>{
             if(res){
-              this._sBService.openSnackBar("Deleted Successfully","done");
-              this.RoleList();
+              this._sBService.openSnackBar("User Deleted Successfully","done");
+              this.userList();
             }  
           },err=>{
             console.log(err);

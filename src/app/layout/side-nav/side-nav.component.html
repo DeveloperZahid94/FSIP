@@ -1,0 +1,77 @@
+<mat-drawer-container class="example-container" >
+    <mat-drawer mode="side" [opened]="isSidebarOpen" class="custom-drawer" [class.sidebar-open]="isSidebarOpen">
+      
+        <mat-nav-list id="#ListDash" style="padding:15px;font-size:larger;background-color:#FF7F32;">
+            <mat-icon mat-list-icon>home</mat-icon>
+            <span *ngIf="isSidebarOpen" class="menu-item">Dashboard</span>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+        
+        <mat-list-item [routerLink]="'/Roles'" routerLinkActive="active-link" id="listItems">
+            <mat-icon mat-list-icon style="margin-top: 3px;">settings_accessibility</mat-icon>
+            <span *ngIf="isSidebarOpen"  class="menu-item">Roles</span>
+        </mat-list-item>
+    
+        <mat-list-item [routerLink]="'/Users'" routerLinkActive="active-link" id="listItems">
+            <mat-icon mat-list-icon>ios_share</mat-icon>
+            <span  *ngIf="isSidebarOpen" class="menu-item">Users</span>
+        </mat-list-item>
+
+        <mat-list-item [routerLink]="'/Customers'" routerLinkActive="active-link" id="listItems">
+            <mat-icon mat-list-icon>sync_saved_locally</mat-icon>
+            <span  *ngIf="isSidebarOpen" class="menu-item">Customers</span>
+        </mat-list-item>
+
+        <mat-list-item  id="listItems">
+            <mat-icon mat-list-icon>handshake</mat-icon>
+            <span  *ngIf="isSidebarOpen" class="menu-item">Projects</span>
+        </mat-list-item>
+
+        <mat-list-item  id="listItems">
+          <mat-icon mat-list-icon>diversity_2</mat-icon>
+          <span  *ngIf="isSidebarOpen" class="menu-item">OCR Engines</span>
+        </mat-list-item>
+
+        <mat-list-item  id="listItems">
+          <mat-icon mat-list-icon>person_off</mat-icon>
+          <span  *ngIf="isSidebarOpen" class="menu-item">Reject Reasons</span>
+        </mat-list-item>
+
+        <mat-list-item  id="listItems">
+          <mat-icon mat-list-icon>supervisor_account</mat-icon>
+          <span  *ngIf="isSidebarOpen" class="menu-item">Page Types</span>
+        </mat-list-item>
+        
+        <mat-list-item  id="listItems">
+          <mat-icon mat-list-icon>share_off</mat-icon>
+          <span  *ngIf="isSidebarOpen" class="menu-item">Queues</span>
+        </mat-list-item>
+
+        
+
+        <mat-list-item  id="listItems">
+          <mat-icon mat-list-icon>person_raised_hand</mat-icon>
+          <span  *ngIf="isSidebarOpen" class="menu-item">Field Library</span>
+        </mat-list-item>
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+         <button  mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>{{ isSidebarOpen ? 'chevron_left' : 'chevron_right' }}</mat-icon>
+      </button>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
+   <!-- <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Dropdown
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                  <mat-option value="option1">Option 1</mat-option>
+                  <mat-option value="option2">Option 2</mat-option>
+              </mat-expansion-panel>
+          </mat-nav-list>    -->

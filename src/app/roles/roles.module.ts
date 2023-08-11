@@ -15,8 +15,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { LayoutModule } from '../layout/layout.module';
 
 
 
@@ -33,8 +34,9 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
     FormsModule,ReactiveFormsModule,
     MatInputModule,MatFormFieldModule,
     MatSelectModule,MatIconModule,MatButtonModule,
-    MatDialogModule,MatToolbarModule,
-    MatPaginatorModule, MatTableModule
+    MatDialogModule,MatCheckboxModule,
+    MatPaginatorModule, MatTableModule,
+    LayoutModule
   ]
 })
 export class RolesModule { }

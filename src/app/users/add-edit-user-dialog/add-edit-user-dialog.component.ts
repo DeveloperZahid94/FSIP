@@ -38,13 +38,16 @@ export class AddEditUserDialogComponent implements OnInit{
       email:new FormControl(this.data?.dataObj ? this.data.dataObj?.email:null),
       phone:new FormControl(this.data?.dataObj ? this.data.dataObj?.phone:null),
       domainName:new FormControl(this.data?.dataObj ? this.data.dataObj?.domainName:null),
-      countryCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.isActive:null),
-      currencyCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.isActive:null),
+      countryCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.countryCode:null),
+      currencyCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.currencyCode:null),
+      locationType:new FormControl(this.data?.dataObj ? this.data.dataObj?.locationType:null),
+      locationCode:new FormControl(this.data?.dataObj ? this.data.dataObj?.locationCode:null),
       createdAt:new FormControl(this.data?.dataObj ? this.data.dataObj?.createdAt:new Date()),
-      updatedAt:new FormControl(this.data?.dataObj ? this.data.dataObj?.updatedAt:null),
+      updatedAt:new FormControl(this.data?.dataObj ? new Date():null),
       timeZone:new FormControl(this.data?.dataObj ? this.data.dataObj?.timeZone:null),
-      defaultRoleId:new FormControl(this.data?.dataObj ? this.data.dataObj?.isActive:null),
-      isActive:new FormControl(this.data?.dataObj ? this.data.dataObj?.isActive:null),
+      defaultRoleId:new FormControl(this.data?.dataObj ? this.data.dataObj?.defaultRoleId:null),
+      managerId:new FormControl(this.data?.dataObj ? this.data.dataObj?.managerId:null),
+      isActive:new FormControl(this.data?.dataObj?.isActive || 1),
     })
   }
 
@@ -62,9 +65,10 @@ export class AddEditUserDialogComponent implements OnInit{
   }
 
   /** 
-   * Method To Add New Role Method Definition  
+   * Method To Add New User Definition  
   */
   private addRole(){
+    debugger;
     let rolesData=this.userForm.value;
     this._userService.postUsers(rolesData).subscribe((res:any[])=>{
       this._sBarService.openSnackBar('User Added successfully!','done');
@@ -75,18 +79,18 @@ export class AddEditUserDialogComponent implements OnInit{
   }
 
   /** 
-   * Method To Update Role values Definition  
+   * Method To Update User values Definition  
   */
   private updateRole(){
-    // let rolesData=this.rolesForm.value;
-    // let id=this.rolesForm.value.id;
+    let userData=this.userForm.value;
+    let id=this.userForm.value.id;
 
-    // this._rolesService.updateRoles(id,rolesData).subscribe((res:any[])=>{
-    //   this._sBarService.openSnackBar('Role Updated successfully!','done')
-    //   this.dialogRef.close(true); 
-    // },err=>{
-    //   console.log(err)
-    // })
+    this._userService.updateUsers(id,userData).subscribe((res:any[])=>{
+      this._sBarService.openSnackBar('User Updated successfully!','done')
+      this.dialogRef.close(true); 
+    },err=>{
+      console.log(err)
+    })
   }
 
 

@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LayoutModule } from './layout/layout.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

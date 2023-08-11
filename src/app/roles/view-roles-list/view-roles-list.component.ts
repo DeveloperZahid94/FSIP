@@ -18,7 +18,7 @@ export class ViewRolesListComponent implements OnInit,AfterViewInit {
     private _sBService:SnackBarServiceService 
     ){}
 
-  displayedColumns: string[] = ['id', 'roleName', 'description', 'created_At','updated_At','isActive','Action'];
+  displayedColumns: string[] = ['roleName', 'description','Action'];
   dataSource= new MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -36,7 +36,7 @@ export class ViewRolesListComponent implements OnInit,AfterViewInit {
    * Method To Open Dialog For Add/Edit Roles based on Action passed  
   */
   public roleAction(event:string,ele:any){
-    return this.dialog.open(AddRolesComponent, {width: '50%', height: '40%',data:{Action:event,dataObj:ele}}).afterClosed()
+    return this.dialog.open(AddRolesComponent, {width: '50%', height: '60%',data:{Action:event,dataObj:ele}}).afterClosed()
       .subscribe(res => {
         if(res){
           this.RoleList();
@@ -63,12 +63,12 @@ export class ViewRolesListComponent implements OnInit,AfterViewInit {
    * Method To get delete  roles  
   */
   public deleteRole(id:number){
-    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '20%',data:{Message:'Delete Role'}}).afterClosed()
+    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '32%',data:{Message:'Delete Role'}}).afterClosed()
       .subscribe(res => {
         if(res==='Yes'){
           this._rolesService.deleteRoles(id).subscribe(res=>{
             if(res){
-              this._sBService.openSnackBar("Deleted Successfully","done");
+              this._sBService.openSnackBar("Role Deleted Successfully","done");
               this.RoleList();
             }  
           },err=>{
@@ -77,5 +77,8 @@ export class ViewRolesListComponent implements OnInit,AfterViewInit {
         }
       });
   }
+
+
+  
   
 }
