@@ -15,6 +15,11 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CustomersRoutingModule } from '../customers/customers-routing.module';
+import { OcrEnginesRoutingModule } from '../ocr-engines/ocr-engines-routing.module';
+import { ProjectsRoutingModule } from '../projects/projects-routing.module';
+import { RejectionReasonModule } from '../rejection-reason/rejection-reason.module';
+import { RejectionReasonRoutingModule } from '../rejection-reason/rejection-reason-routing.module';
+import { PageTypesRoutingModule } from '../page-types/page-types-routing.module';
 
 
 
@@ -30,8 +35,9 @@ import { CustomersRoutingModule } from '../customers/customers-routing.module';
     MatToolbarModule,MatIconModule,MatButtonModule,
     MatSidenavModule,MatListModule,MatExpansionModule,MatMenuModule,
     MatSelectModule,MatFormFieldModule,
-    UsersRoutingModule,RolesRoutingModule,CustomersRoutingModule
- 
+    UsersRoutingModule,RolesRoutingModule,CustomersRoutingModule,
+    OcrEnginesRoutingModule,RejectionReasonRoutingModule,ProjectsRoutingModule,
+    PageTypesRoutingModule
   ],
   exports: [
     HeaderComponent,

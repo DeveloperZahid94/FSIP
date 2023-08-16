@@ -1,0 +1,73 @@
+<div class="container-fluid mt-3">
+    <form [formGroup]="projectForm">
+      <div class="p-2">
+        <h1>{{this.data.Action}} PROJECT</h1><hr>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" id="txtFormElements">
+            <mat-label>Project Code</mat-label>
+            <input
+              matInput
+              placeholder="Enter Project Code"
+              name="projectCode"
+              formControlName="projectCode"
+              required
+            />
+            <mat-icon matSuffix>edit</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="outline" id="txtFormElements">
+              <mat-label>Project Name</mat-label>
+              <input
+                matInput
+                placeholder="Enter Project Name"
+                name="projectName"
+                formControlName="projectName"
+                required
+              />
+              <mat-icon matSuffix>edit</mat-icon>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field appearance="outline" id="txtFormElements">
+                <mat-label>Select Customer</mat-label>
+                <mat-select 
+                name="customerId"
+                formControlName="customerId"
+                required
+                >
+                  <mat-option value="C100">C100</mat-option>
+                  <mat-option value="C101">C101</mat-option>
+                  <mat-option value="C102">C102</mat-option>
+                  <mat-option value="C103">C103</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <div style="margin-top:10px;">
+              <mat-radio-group aria-label="Select an option" formControlName="isActive" >
+                <mat-radio-button value="0">Active</mat-radio-button>
+                <mat-radio-button value="1">InActive</mat-radio-button>
+              </mat-radio-group>
+              </div>
+          </div>
+        </div>
+  <hr>
+      <div class="Action"> 
+        <button mat-raised-button id="primaryColor" [disabled]="!projectForm.valid" (click)="addUpdateProject()" class="float-end p-3">
+            <mat-icon>add</mat-icon>
+            {{this.data.Action}} And Continue
+        </button>
+        <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
+            <mat-icon>cancel</mat-icon>
+            Cancel
+        </button>
+   </div>
+    </form>
+  </div>
+  

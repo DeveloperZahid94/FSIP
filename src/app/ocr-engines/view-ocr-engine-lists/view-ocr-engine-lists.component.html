@@ -1,0 +1,58 @@
+<div class="container mt-2">
+    <div class="card shadow">
+        <div class="card-header position-relative">
+            <h1>{{'OCR-Engines' | uppercase}}</h1>
+            <div class="button-container position-absolute top-0 end-0">
+                <button mat-raised-button id="warnColor" class="">
+                    <mat-icon>do_not_disturb_on</mat-icon>
+                    Delete
+                </button>
+                <button mat-raised-button id="primaryColor" (click)="ocrEngineAction('ADD',null)" class="">
+                    <mat-icon>add_circle</mat-icon>
+                    Add New
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="mat">
+                <table mat-table [dataSource]="dataSource">
+
+                <!-- Description Column -->
+                <ng-container matColumnDef="engineCode">
+                    <th mat-header-cell *matHeaderCellDef style="width:25%;"> Engine Code </th>
+                    <td mat-cell *matCellDef="let element" style="width:25%;"> {{element.engineCode}} </td>
+                </ng-container>
+
+                <!-- Name Role -->
+                <ng-container matColumnDef="engineName">
+                    <th mat-header-cell *matHeaderCellDef style="width:25%;"> Engine Name </th>
+                    <td mat-cell *matCellDef="let element" style="width:25%;"> {{element.engineName}} </td>
+                </ng-container>
+
+                <!-- Name Role -->
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef style="width:25%;"> Description </th>
+                    <td mat-cell *matCellDef="let element" style="width:25%;"> {{element.description}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="Action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element" style="width:15%;">
+                        <mat-icon color="" style="color:black;" (click)="ocrEngineAction('EDIT',element)">edit</mat-icon>
+                        <mat-icon color="" style="color:black;" (click)="deleteocrEngine(element.id)">delete</mat-icon>
+                    </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" id="custom-table"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" id="custom-table"></tr>
+                </table>
+            
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                            showFirstLastButtons
+                            aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+    
+</div>

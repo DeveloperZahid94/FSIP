@@ -7,12 +7,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width:100%;
     line-height:5px;
   }
+  #textAreaFormElements{
+    width:100%
+  }
 #primaryColor{
     background-color:#1D4F91;
     color:white;
     margin-top:10px ;
     margin-right: 5px;
 }
+
+
 
 #warnColor{
     background-color:#FF7F32;

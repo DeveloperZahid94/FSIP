@@ -36,7 +36,7 @@ export class ViewRolesListComponent implements OnInit,AfterViewInit {
    * Method To Open Dialog For Add/Edit Roles based on Action passed  
   */
   public roleAction(event:string,ele:any){
-    return this.dialog.open(AddRolesComponent, {width: '50%', height: '60%',data:{Action:event,dataObj:ele}}).afterClosed()
+    return this.dialog.open(AddRolesComponent, {width: '50%', height: '380px',data:{Action:event,dataObj:ele}}).afterClosed()
       .subscribe(res => {
         if(res){
           this.RoleList();
@@ -63,7 +63,7 @@ export class ViewRolesListComponent implements OnInit,AfterViewInit {
    * Method To get delete  roles  
   */
   public deleteRole(id:number){
-    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '32%',data:{Message:'Delete Role'}}).afterClosed()
+    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '210px',data:{Message:'Delete Role'}}).afterClosed()
       .subscribe(res => {
         if(res==='Yes'){
           this._rolesService.deleteRoles(id).subscribe(res=>{

@@ -1,0 +1,58 @@
+<div class="container mt-2">
+    <div class="card shadow">
+        <div class="card-header position-relative">
+            <h1>{{'Projects' | uppercase}}</h1>
+            <div class="button-container position-absolute top-0 end-0">
+                <button mat-raised-button id="warnColor" class="">
+                    <mat-icon>do_not_disturb_on</mat-icon>
+                    Delete
+                </button>
+                <button mat-raised-button id="primaryColor" (click)="projectAction('ADD',null)" class="">
+                    <mat-icon>add_circle</mat-icon>
+                    Add New 
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="mat">
+                <table mat-table [dataSource]="dataSource">
+
+                <!-- Description Column -->
+                <ng-container matColumnDef="customerId">
+                    <th mat-header-cell *matHeaderCellDef style="width:25%;"> Customer Code </th>
+                    <td mat-cell *matCellDef="let element" style="width:25%;"> {{element.customerId}} </td>
+                </ng-container>
+
+                <!-- Name Role -->
+                <ng-container matColumnDef="projectCode">
+                    <th mat-header-cell *matHeaderCellDef style="width:25%;"> Project Code </th>
+                    <td mat-cell *matCellDef="let element" style="width:25%;"> {{element.projectCode}} </td>
+                </ng-container>
+
+                <!-- Name Role -->
+                <ng-container matColumnDef="projectName">
+                    <th mat-header-cell *matHeaderCellDef style="width:25%;"> Project Name </th>
+                    <td mat-cell *matCellDef="let element" style="width:25%;"> {{element.projectName}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="Action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element" style="width:15%;">
+                        <mat-icon color="" style="color:black;" (click)="projectAction('EDIT',element)">edit</mat-icon>
+                        <mat-icon color="" style="color:black;" (click)="deleteProject(element.id)">delete</mat-icon>
+                    </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" id="custom-table"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" id="custom-table"></tr>
+                </table>
+            
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                            showFirstLastButtons
+                            aria-label="Select page of periodic elements">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+    
+</div>

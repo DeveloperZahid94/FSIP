@@ -16,13 +16,17 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatCardModule} from '@angular/material/card';
+import { CustomerOnBoardingComponent } from './customer-on-boarding/customer-on-boarding.component';
 
 
 @NgModule({
   declarations: [
     CustomersComponent,
     ViewCustomersComponent,
-    AddEditCustomersDialogComponent
+    AddEditCustomersDialogComponent,
+    CustomerOnBoardingComponent
   ],
   imports: [
     CommonModule,
@@ -31,9 +35,9 @@ import { MatRadioModule } from '@angular/material/radio';
     FormsModule,ReactiveFormsModule,
     MatInputModule,MatFormFieldModule,
     MatSelectModule,MatIconModule,MatButtonModule,
-    MatDialogModule,MatRadioModule,
-    MatPaginatorModule, MatTableModule,
-    LayoutModule
+    MatDialogModule,MatRadioModule,MatStepperModule,
+    MatPaginatorModule, MatTableModule,MatCardModule,
+    LayoutModule,
   ]
 })
 export class CustomersModule { }

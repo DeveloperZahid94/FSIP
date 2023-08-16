@@ -8,6 +8,7 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 })
 export class SideNavComponent implements OnInit{
   isSidebarOpen = true;
+  isExpanded=false;
 
 
   constructor() {}
@@ -22,10 +23,10 @@ export class SideNavComponent implements OnInit{
   }
 
   checkScreenSize() {
-    this.isSidebarOpen = window.innerWidth >= 600;
+    this.isExpanded = window.innerWidth >= 600;
   }
   
   toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
+    this.isExpanded = !this.isSidebarOpen;
   }
 }

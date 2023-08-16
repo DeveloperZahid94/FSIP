@@ -38,8 +38,7 @@ export class ViewUserListComponent implements OnInit{
     this._userService.getUsers().subscribe(res=>{
       console.log(res);
       this.dataSource=new MatTableDataSource(res);
-      this.cdr.detectChanges(); // Trigger change detection
-      //this.dataSource.paginator=this.paginator;
+      this.dataSource.paginator=this.paginator;
     },err=>{
       console.log(err);
     })
@@ -49,7 +48,7 @@ export class ViewUserListComponent implements OnInit{
    * Method To Open Dialog For Add/Edit Roles based on Action passed  
   */
   public userAction(event:string,ele:any){
-    return this.dialog.open(AddEditUserDialogComponent, {width: '90%', height: '100%',data:{Action:event,dataObj:ele}}).afterClosed()
+    return this.dialog.open(AddEditUserDialogComponent, {width: '90%', height: '760px',data:{Action:event,dataObj:ele}}).afterClosed()
       .subscribe(res => {
         if(res){
           this.userList();
@@ -58,8 +57,11 @@ export class ViewUserListComponent implements OnInit{
       });
   }
 
+  /** 
+   * Method To Open Dialog For Add/Edit Roles based on Action passed  
+  */
   public deleteUser(id:number){
-    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '32%',data:{Message:'Delete User'}}).afterClosed()
+    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '210px',data:{Message:'Delete User'}}).afterClosed()
       .subscribe(res => {
         if(res==='Yes'){
           this._userService.deleteUsers(id).subscribe(res=>{

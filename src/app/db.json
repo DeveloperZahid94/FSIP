@@ -125,6 +125,131 @@
       "isActive": "0"
     }
   ],
+  "PageType": [
+    {
+      "id": 1,
+      "pageTypeCode": "test Rejection ",
+      "PageTypeName": "rejection Reason",
+      "description": "testProj is a rejection description",
+      "createdAt": "2023-08-11T12:52:57.068Z",
+      "updatedAt": "2023-08-11T12:52:57.068Z",
+      "isActive": 1
+    },
+    {
+      "id": 2,
+      "pageTypeCode": "testCode",
+      "PageTypeName": "vvvv",
+      "description": "vvvvv",
+      "createdAt": "2023-08-16T06:15:42.998Z",
+      "updatedAt": null,
+      "isActive": 1
+    }
+  ],
+  "RejectReason": [
+    {
+      "id": 1,
+      "rejectCode": "test Rejection ",
+      "reason": "rejection Reason",
+      "description": "testProj is a rejection description",
+      "createdAt": "2023-08-11T12:52:57.068Z",
+      "updatedAt": "2023-08-11T12:52:57.068Z",
+      "isActive": 1
+    },
+    {
+      "id": 2,
+      "rejectCode": "R-101235",
+      "reason": "Reasons To Check",
+      "description": "Reasons To Check.Reasons To Check.Reasons To Check.Reasons To Check",
+      "createdAt": "2023-08-14T11:34:29.779Z",
+      "updatedAt": null,
+      "isActive": 1
+    }
+  ],
+  "OCREngines": [
+    {
+      "id": 1,
+      "engineCode": "test engine",
+      "engineName": "testnewwwww",
+      "description": "testProj is a test engine description",
+      "createdAt": "2023-08-11T12:52:57.068Z",
+      "updatedAt": "2023-08-11T12:52:57.068Z",
+      "isActive": 1
+    },
+    {
+      "id": 2,
+      "engineCode": "ENG-101",
+      "engineName": "TubeWell Dev",
+      "description": " Machine which reduces human efforts ",
+      "createdAt": "2023-08-14T11:32:14.118Z",
+      "updatedAt": null,
+      "isActive": "0"
+    },
+    {
+      "id": 3,
+      "engineCode": "ENG-1025",
+      "engineName": "BoreWel Engine s",
+      "description": " Machine which reduces human efforts ",
+      "createdAt": "2023-08-14T11:33:09.202Z",
+      "updatedAt": null,
+      "isActive": "0"
+    }
+  ],
+  "Projects": [
+    {
+      "id": 1,
+      "customerId": "test",
+      "projectCode": "testnewwwww",
+      "projectName": "testProj",
+      "createdAt": "2023-08-11T12:52:57.068Z",
+      "updatedAt": "2023-08-11T12:52:57.068Z",
+      "isActive": 1
+    },
+    {
+      "id": 2,
+      "customerId": "C100",
+      "projectCode": "test project",
+      "projectName": "project",
+      "createdAt": "2023-08-14T05:24:56.290Z",
+      "updatedAt": "2023-08-14T05:30:59.519Z",
+      "isActive": 1
+    },
+    {
+      "id": 3,
+      "customerId": "C101",
+      "projectCode": "WD101",
+      "projectName": "Web Design",
+      "createdAt": "2023-08-14T11:28:52.035Z",
+      "updatedAt": null,
+      "isActive": "0"
+    },
+    {
+      "id": 4,
+      "customerId": "C102",
+      "projectCode": "WD101",
+      "projectName": "WebDesigning ",
+      "createdAt": "2023-08-14T11:29:55.110Z",
+      "updatedAt": null,
+      "isActive": "0"
+    },
+    {
+      "id": 5,
+      "customerId": "C101",
+      "projectCode": "SQL",
+      "projectName": "Database Design",
+      "createdAt": "2023-08-14T11:31:11.352Z",
+      "updatedAt": null,
+      "isActive": "0"
+    },
+    {
+      "id": 6,
+      "customerId": "C103",
+      "projectCode": "FE",
+      "projectName": "UX Design",
+      "createdAt": "2023-08-14T11:31:36.487Z",
+      "updatedAt": null,
+      "isActive": "0"
+    }
+  ],
   "Customers": [
     {
       "id": 1,
@@ -139,6 +264,30 @@
       "customerCode": "test ",
       "customerName": "test new",
       "createdAt": "2023-08-11T12:52:43.285Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 3,
+      "customerCode": "cc100",
+      "customerName": "new Customer1",
+      "createdAt": "2023-08-14T11:26:35.157Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 4,
+      "customerCode": "CC987",
+      "customerName": "Customer new ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 5,
+      "customerCode": "z100",
+      "customerName": "zahid",
+      "createdAt": "2023-08-16T11:30:41.808Z",
       "updatedAt": null,
       "isActive": 1
     }

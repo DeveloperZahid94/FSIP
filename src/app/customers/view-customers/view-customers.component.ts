@@ -33,10 +33,10 @@ export class ViewCustomersComponent implements OnInit{
 
 
 /** 
-   * Method To Open Dialog For Add/Edit Roles based on Action passed  
+   * Method To Open Dialog For Add/Edit customer based on Action passed  
   */
   public customerAction(event:string,ele:any){
-    return this.dialog.open(AddEditCustomersDialogComponent, {width: '50%', height: '55%',data:{Action:event,dataObj:ele}}).afterClosed()
+    return this.dialog.open(AddEditCustomersDialogComponent, {width: '50%', height: '350px',data:{Action:event,dataObj:ele}}).afterClosed()
       .subscribe(res => {
         if(res){
           this.customersList();
@@ -46,7 +46,7 @@ export class ViewCustomersComponent implements OnInit{
   }
 
   /** 
-   * Method To get List of roles  
+   * Method To get List of customer  
   */
   private customersList(){
     this._customerService.getCustomers().subscribe(res=>{
@@ -60,10 +60,10 @@ export class ViewCustomersComponent implements OnInit{
 
 
   /** 
-   * Method To get delete  roles  
+   * Method To get delete  customer  
   */
   public deleteCustomer(id:number){
-    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '32%',data:{Message:'Delete Customer'}}).afterClosed()
+    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '210px',data:{Message:'Delete Customer'}}).afterClosed()
       .subscribe(res => {
         if(res==='Yes'){
           this._customerService.deleteCustomers(id).subscribe(res=>{

@@ -1,0 +1,70 @@
+<div class="container-fluid mt-3">
+    <form [formGroup]="OCREngineForm">
+      <div class="p-2">
+        <h1>{{this.data.Action}} OCR-ENGINE</h1><hr>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+          <mat-form-field appearance="outline" id="txtFormElements">
+            <mat-label>Engine Code</mat-label>
+            <input
+              matInput
+              placeholder="Enter Engine Code"
+              name="engineCode"
+              formControlName="engineCode"
+              required
+            />
+            <mat-icon matSuffix>edit</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="outline" id="txtFormElements">
+              <mat-label>Engine Name</mat-label>
+              <input
+                matInput
+                placeholder="Enter Project Name"
+                name="engineName"
+                formControlName="engineName"
+                required
+              />
+              <mat-icon matSuffix>edit</mat-icon>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field appearance="outline" id="txtFormElements">
+                <mat-label>Description</mat-label>
+                <input
+                matInput
+                placeholder="Enter Description"
+                name="description"
+                formControlName="description"
+                required
+              />
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <div style="margin-top:10px;">
+              <mat-radio-group aria-label="Select an option" formControlName="isActive" >
+                <mat-radio-button value="0">Active</mat-radio-button>
+                <mat-radio-button value="1">InActive</mat-radio-button>
+              </mat-radio-group>
+              </div>
+          </div>
+        </div>
+  <hr>
+      <div class="Action"> 
+        <button mat-raised-button id="primaryColor" [disabled]="!OCREngineForm.valid" (click)="addUpdateOCREngine()" class="float-end p-3">
+            <mat-icon>add</mat-icon>
+            {{this.data.Action}} And Continue
+        </button>
+        <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
+            <mat-icon>cancel</mat-icon>
+            Cancel
+        </button>
+   </div>
+    </form>
+  </div>
+  

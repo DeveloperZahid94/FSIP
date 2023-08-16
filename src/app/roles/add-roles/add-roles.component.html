@@ -4,7 +4,7 @@
             <form [formGroup]="rolesForm">
                 <div class="card border border-0">
                         <div class="p-2">
-                            <h1><b>{{actionMessage}} ROLES</b></h1><hr>
+                            <h1>{{actionMessage}} ROLES</h1><hr>
                         </div>
                     <div class="card-body">
                         <div class="row">
@@ -26,7 +26,7 @@
                                   </div>
                             </div>
                         </div>
-                            <mat-form-field appearance="outline" id="txtFormElements" >
+                            <mat-form-field appearance="outline" id="textAreaFormElements" >
                               <mat-label>Role Description</mat-label>
                               <textarea matInput name="description" formControlName="description" placeholder="Enter Description" required></textarea>
                               <mat-icon matSuffix>edit</mat-icon>

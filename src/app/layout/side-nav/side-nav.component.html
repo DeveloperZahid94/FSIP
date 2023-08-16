@@ -1,4 +1,79 @@
-<mat-drawer-container class="example-container" >
+
+<mat-sidenav-container autosize>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <mat-nav-list>
+
+      <mat-list-item>
+        <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded=!isExpanded" [ngClass]="{'rotated':isExpanded}">chevron_right</mat-icon>
+      </mat-list-item>
+
+      <!-- <mat-list-item>
+        <mat-icon mat-list-icon class="">home</mat-icon>
+        <span *ngIf="isExpanded">Dashboard</span>
+      </mat-list-item> -->
+
+      <mat-list-item [routerLink]="'/Roles'" routerLinkActive="active-link" id="listItems">
+        <mat-icon mat-list-icon style="margin-top: 3px;">settings_accessibility</mat-icon>
+        <span *ngIf="isExpanded"  class="menu-item">Roles</span>
+    </mat-list-item>
+
+    <mat-list-item [routerLink]="'/Users'" routerLinkActive="active-link" id="listItems">
+      <mat-icon mat-list-icon>ios_share</mat-icon>
+      <span  *ngIf="isExpanded" class="menu-item">Users</span>
+  </mat-list-item>
+
+
+  <mat-list-item [routerLink]="'/Customers'" routerLinkActive="active-link" id="listItems">
+      <mat-icon mat-list-icon>sync_saved_locally</mat-icon>
+      <span  *ngIf="isExpanded" class="menu-item">Customers</span>
+  </mat-list-item>
+  <mat-list-item [routerLink]="'/Customers/customerOnBoard'" routerLinkActive="active-link" id="listItems">
+    <mat-icon mat-list-icon>sync_saved_locally</mat-icon>
+    <span  *ngIf="isExpanded" class="menu-item">Customer On-Board</span>
+</mat-list-item>
+  
+  
+  <mat-list-item [routerLink]="'/Projects'" routerLinkActive="active-link" id="listItems">
+      <mat-icon mat-list-icon>handshake</mat-icon>
+      <span  *ngIf="isExpanded" class="menu-item">Projects</span>
+  </mat-list-item>
+
+  <mat-list-item [routerLink]="'/OcrEngines'" routerLinkActive="active-link" id="listItems">
+    <mat-icon mat-list-icon>diversity_2</mat-icon>
+    <span  *ngIf="isExpanded" class="menu-item">OCR Engines</span>
+  </mat-list-item>
+
+  <mat-list-item [routerLink]="'/RejectionReason'" routerLinkActive="active-link" id="listItems">
+    <mat-icon mat-list-icon>person_off</mat-icon>
+    <span  *ngIf="isExpanded" class="menu-item">Reject Reasons</span>
+  </mat-list-item>
+
+  <mat-list-item [routerLink]="'/PageTypes'" routerLinkActive="active-link" id="listItems">
+    <mat-icon mat-list-icon>supervisor_account</mat-icon>
+    <span  *ngIf="isExpanded" class="menu-item">Page Types</span>
+  </mat-list-item>
+  
+  <mat-list-item  id="listItems">
+    <mat-icon mat-list-icon>share_off</mat-icon>
+    <span  *ngIf="isExpanded" class="menu-item">Queues</span>
+  </mat-list-item>
+
+  <mat-list-item  id="listItems">
+    <mat-icon mat-list-icon>person_raised_hand</mat-icon>
+    <span  *ngIf="isExpanded" class="menu-item">Field Library</span>
+  </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <div class="content">
+    <mat-toolbar>
+      <h4>hello</h4>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>
+
+
+<!-- <mat-drawer-container class="example-container" >
     <mat-drawer mode="side" [opened]="isSidebarOpen" class="custom-drawer" [class.sidebar-open]="isSidebarOpen">
       
         <mat-nav-list id="#ListDash" style="padding:15px;font-size:larger;background-color:#FF7F32;">
@@ -17,27 +92,33 @@
             <span  *ngIf="isSidebarOpen" class="menu-item">Users</span>
         </mat-list-item>
 
+
         <mat-list-item [routerLink]="'/Customers'" routerLinkActive="active-link" id="listItems">
             <mat-icon mat-list-icon>sync_saved_locally</mat-icon>
             <span  *ngIf="isSidebarOpen" class="menu-item">Customers</span>
         </mat-list-item>
-
-        <mat-list-item  id="listItems">
+        <mat-list-item [routerLink]="'/Customers/customerOnBoard'" routerLinkActive="active-link" id="listItems">
+          <mat-icon mat-list-icon>sync_saved_locally</mat-icon>
+          <span  *ngIf="isSidebarOpen" class="menu-item">Customer On-Board</span>
+      </mat-list-item>
+        
+        
+        <mat-list-item [routerLink]="'/Projects'" routerLinkActive="active-link" id="listItems">
             <mat-icon mat-list-icon>handshake</mat-icon>
             <span  *ngIf="isSidebarOpen" class="menu-item">Projects</span>
         </mat-list-item>
 
-        <mat-list-item  id="listItems">
+        <mat-list-item [routerLink]="'/OcrEngines'" routerLinkActive="active-link" id="listItems">
           <mat-icon mat-list-icon>diversity_2</mat-icon>
           <span  *ngIf="isSidebarOpen" class="menu-item">OCR Engines</span>
         </mat-list-item>
 
-        <mat-list-item  id="listItems">
+        <mat-list-item [routerLink]="'/RejectionReason'" routerLinkActive="active-link" id="listItems">
           <mat-icon mat-list-icon>person_off</mat-icon>
           <span  *ngIf="isSidebarOpen" class="menu-item">Reject Reasons</span>
         </mat-list-item>
 
-        <mat-list-item  id="listItems">
+        <mat-list-item [routerLink]="'/PageTypes'" routerLinkActive="active-link" id="listItems">
           <mat-icon mat-list-icon>supervisor_account</mat-icon>
           <span  *ngIf="isSidebarOpen" class="menu-item">Page Types</span>
         </mat-list-item>
@@ -62,7 +143,7 @@
       </button>
         <router-outlet></router-outlet>
     </mat-drawer-content>
-  </mat-drawer-container>
+  </mat-drawer-container> -->
 
 
    <!-- <mat-expansion-panel>

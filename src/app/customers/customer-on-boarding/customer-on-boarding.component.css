@@ -1,0 +1,12 @@
+.mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  .card-header{
+    background: #002855;
+    color:white;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
