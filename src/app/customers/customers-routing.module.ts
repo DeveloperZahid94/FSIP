@@ -6,8 +6,8 @@ import { CustomerOnBoardingComponent } from './customer-on-boarding/customer-on-
 
 const routes: Routes = [{ path: '', component: CustomersComponent, 
 children:[
-  {path:'viewCustomers',component:ViewCustomersComponent},
-  {path:'customerOnBoard',component:CustomerOnBoardingComponent},
+  {path:'viewCustomers',component:ViewCustomersComponent ,data: { breadcrumb: 'view' }},
+  {path:'customerOnBoard',component:CustomerOnBoardingComponent,data: { breadcrumb: 'onBoad' }},
   {path:'**',component:ViewCustomersComponent},
 ]
 }];

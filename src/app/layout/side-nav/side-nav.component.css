@@ -86,29 +86,27 @@ mat-sidenav-container{
 
 #listItems{
   padding:10px;
-  margin-top:5px;
+  /* margin-top:5px; */
 }
 #listItems span{
   color:white;
-  font-size:medium;
+  font-size:15px;
   margin-left:5px;
-  
 }
 #listItems mat-icon{
   color:white;
-  margin-top:3px;
-  
 }
 #listItems:hover{
-  border-right:solid 3px orangered;
+  /* border-right:solid 3px orangered; */
   cursor: pointer;
   background-color: rgba(255,255,255,0.5);
   color:black
 }
 
 .active-link {
-  border-right:solid 3px orangered;
+  /* border-right:solid 3px orangered; */
   background-color: rgba(255,255,255,0.5);
+  /* color:white; */
 } 
 
 mat-sidenav {
@@ -127,8 +125,43 @@ mat-sidenav {
 
     .chevron-button.rotated{
       transform:rotate(180deg);
+     
     }
   
+    #dividerColor{
+      border-bottom: 2px solid #fff;
+    }
+
+    .custom-menu-buttondd .menu-contentdd {
+      display: inline-flex; 
+      align-items: center;
+    }
+    .custom-menu-buttondd .mat-list-icon {
+      vertical-align: middle; 
+    }
+
+    .custom-menu-item .menu-content {
+      display: flex;
+      align-items: center;
+    }
+    
+    .custom-menu-item .icon {
+      margin-right: 8px; /* Adjust this margin as needed */
+      vertical-align: middle;
+    }
+    #iconColor{
+      color:#FF7F32 !important;
+    }
+  
+    
+
+    
+    
+    
+    
+    
+    
+    
 
 
 

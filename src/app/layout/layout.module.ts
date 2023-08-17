@@ -20,6 +20,7 @@ import { ProjectsRoutingModule } from '../projects/projects-routing.module';
 import { RejectionReasonModule } from '../rejection-reason/rejection-reason.module';
 import { RejectionReasonRoutingModule } from '../rejection-reason/rejection-reason-routing.module';
 import { PageTypesRoutingModule } from '../page-types/page-types-routing.module';
+import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
 
 
 
@@ -28,7 +29,8 @@ import { PageTypesRoutingModule } from '../page-types/page-types-routing.module'
   declarations: [
     HeaderComponent,
     SideNavComponent,
-    FooterComponent
+    FooterComponent,
+    BreadCrumbComponent
   ],
   imports: [
     CommonModule,

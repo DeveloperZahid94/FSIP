@@ -1,31 +1,76 @@
 
 <!-- <mat-card class="m-2"> -->
-<div class="card shadow m-3">
-    <div class="card-header">
-        <h1>Customer On-Boarding </h1>
-    </div>
-    <mat-stepper #stepper linear>
-        <mat-step  errorMessage="Name is required." >
-        <form >
-            <ng-template matStepLabel>Customer</ng-template>
-            <div class="row">
-                <div class="col-md-12">
-                <button mat-raised-button id="primaryColor" (click)="addAction('ADD',null,'Customer')" class="float-end">
-                    <mat-icon>add_circle</mat-icon>
-                    Add New
-                </button>
-                </div>
-            </div>
-            
+<div class="container">
+    <div class="card shadow mt-2">
+        <div class="card-header">
+            <h1 class="mt-2">Customer On-Boarding </h1>
+        </div>
+        <mat-stepper #stepper linear>
+            <mat-step  errorMessage="Name is required." >
+            <form >
+                <ng-template matStepLabel>Customer</ng-template>
                 <div class="row">
                     <div class="col-md-12">
-                        <mat-form-field appearance="outline" id="txtFormElements">
-                            <mat-label>Select Customer Code</mat-label>
-                            <mat-select 
+                    <button mat-raised-button id="primaryColor" (click)="addAction('ADD',null,'Customer')" class="float-end">
+                        <mat-icon>add_circle</mat-icon>
+                        Add New
+                    </button>
+                    </div>
+                </div>
+                
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field appearance="outline" id="txtFormElements">
+                                <mat-label>Select Customer Code</mat-label>
+                                <mat-select 
+                                name="customerId"
+                                required
+                                >
+                                <mat-option value="{{data.customerCode}}" *ngFor="let data of customerList">{{data.customerCode}}</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                        </div>
+                    </div>  
+                    <div class="row">
+                        <div class="col-md-12">
+                            <mat-form-field appearance="outline" id="txtFormElements">
+                                <mat-label>Select Customer</mat-label>
+                                <mat-select 
+                                name="customerId"
+                                required
+                                >
+                                <mat-option value="{{data.customerCode}}" *ngFor="let data of customerList">{{data.customerName}}</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                        </div>
+                    </div>  
+                    <hr> 
+                <div class="float-end">
+                <button mat-raised-button id="primaryColor" matStepperNext>Next</button>
+                </div>
+            </form>
+            </mat-step>
+
+            <mat-step  errorMessage="Address is required.">
+            <form >
+                <ng-template matStepLabel>Projects</ng-template>
+                <div class="row">
+                    <div class="col-md-12">
+                    <button mat-raised-button id="primaryColor" (click)="addAction('ADD',null,'Project')" class="float-end">
+                        <mat-icon>add_circle</mat-icon>
+                        Add New
+                    </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline" id="txtFormElements" >
+                            <mat-label>Select Project Code</mat-label>
+                            <mat-select  
                             name="customerId"
                             required
                             >
-                            <mat-option value="{{data.customerCode}}" *ngFor="let data of customerList">{{data.customerCode}}</mat-option>
+                            <mat-option value='{{data.projectCode}}' *ngFor="let data of projectList">{{data.projectCode}}</mat-option>
                             </mat-select>
                     </mat-form-field>
                     </div>
@@ -33,192 +78,149 @@
                 <div class="row">
                     <div class="col-md-12">
                         <mat-form-field appearance="outline" id="txtFormElements">
-                            <mat-label>Select Customer</mat-label>
+                            <mat-label>Select Project</mat-label>
                             <mat-select 
                             name="customerId"
                             required
                             >
-                            <mat-option value="{{data.customerCode}}" *ngFor="let data of customerList">{{data.customerName}}</mat-option>
+                            <mat-option value='{{data.projectName}}' *ngFor="let data of projectList">{{data.projectName}}</mat-option>
                             </mat-select>
                     </mat-form-field>
                     </div>
                 </div>  
                 <hr> 
-            <div class="float-end">
-            <button mat-raised-button id="primaryColor" matStepperNext>Next</button>
-            </div>
-        </form>
-        </mat-step>
-
-        <mat-step  errorMessage="Address is required.">
-        <form >
-            <ng-template matStepLabel>Projects</ng-template>
-            <div class="row">
-                <div class="col-md-12">
-                <button mat-raised-button id="primaryColor" (click)="addAction('ADD',null,'Project')" class="float-end">
-                    <mat-icon>add_circle</mat-icon>
-                    Add New
-                </button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field appearance="outline" id="txtFormElements" >
-                        <mat-label>Select Project Code</mat-label>
-                        <mat-select  
-                        name="customerId"
-                        required
-                        >
-                        <mat-option value='{{data.projectCode}}' *ngFor="let data of projectList">{{data.projectCode}}</mat-option>
-                        </mat-select>
-                </mat-form-field>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field appearance="outline" id="txtFormElements">
-                        <mat-label>Select Project</mat-label>
-                        <mat-select 
-                        name="customerId"
-                        required
-                        >
-                        <mat-option value='{{data.projectName}}' *ngFor="let data of projectList">{{data.projectName}}</mat-option>
-                        </mat-select>
-                </mat-form-field>
-                </div>
-            </div>  
-            <hr> 
-            <div class="float-end">
-            <button mat-raised-button matStepperPrevious id="warnColor">Back</button>
-            <button mat-raised-button id="primaryColor" matStepperNext class="ms-2">Next</button>
-            </div>
-        </form>
-        </mat-step>
-
-        <mat-step  errorMessage="Address is required.">
-            <form >
-            <ng-template matStepLabel>Users</ng-template>
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field appearance="outline" id="txtFormElements">
-                        <mat-label>Select Username</mat-label>
-                        <mat-select 
-                        name="customerId"
-                        required
-                        >
-                        <mat-option value='{{data.userName}}' *ngFor="let data of userList">{{data.userName}}</mat-option>
-                        </mat-select>
-                </mat-form-field>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field appearance="outline" id="txtFormElements">
-                        <mat-label>Select email</mat-label>
-                        <mat-select 
-                        name="customerId"
-                        required
-                        >
-                        <mat-option value='{{data.email}}' *ngFor="let data of userList">{{data.email}}</mat-option>
-                        
-                        </mat-select>
-                </mat-form-field>
-                </div>
-            </div>  
-            <hr>
-            <div class="float-end">
+                <div class="float-end">
                 <button mat-raised-button matStepperPrevious id="warnColor">Back</button>
                 <button mat-raised-button id="primaryColor" matStepperNext class="ms-2">Next</button>
-            </div>
+                </div>
             </form>
-        </mat-step>
+            </mat-step>
 
-        <mat-step  errorMessage="Address is required.">
-            <form >
-            <ng-template matStepLabel>Reasons</ng-template>
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field appearance="outline" id="txtFormElements">
-                        <mat-label>Select Rejection Code</mat-label>
-                        <mat-select 
-                        name="customerId"
-                        required
-                        >
-                        <mat-option value='{{data.rejectCode}}' *ngFor="let data of reasonList">{{data.rejectCode}}</mat-option>
-                        </mat-select>
-                </mat-form-field>
+            <mat-step  errorMessage="Address is required.">
+                <form >
+                <ng-template matStepLabel>Users</ng-template>
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline" id="txtFormElements">
+                            <mat-label>Select Username</mat-label>
+                            <mat-select 
+                            name="customerId"
+                            required
+                            >
+                            <mat-option value='{{data.userName}}' *ngFor="let data of userList">{{data.userName}}</mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline" id="txtFormElements">
+                            <mat-label>Select email</mat-label>
+                            <mat-select 
+                            name="customerId"
+                            required
+                            >
+                            <mat-option value='{{data.email}}' *ngFor="let data of userList">{{data.email}}</mat-option>
+                            
+                            </mat-select>
+                    </mat-form-field>
+                    </div>
+                </div>  
+                <hr>
+                <div class="float-end">
+                    <button mat-raised-button matStepperPrevious id="warnColor">Back</button>
+                    <button mat-raised-button id="primaryColor" matStepperNext class="ms-2">Next</button>
                 </div>
-            </div>  
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field appearance="outline" id="txtFormElements">
-                        <mat-label>Select Reason</mat-label>
-                        <mat-select 
-                        name="customerId"
-                        required
-                        >
-                        <mat-option value='{{data.reason}}' *ngFor="let data of reasonList">{{data.reason}}</mat-option>
-                        </mat-select>
-                </mat-form-field>
+                </form>
+            </mat-step>
+
+            <mat-step  errorMessage="Address is required.">
+                <form >
+                <ng-template matStepLabel>Reasons</ng-template>
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline" id="txtFormElements">
+                            <mat-label>Select Rejection Code</mat-label>
+                            <mat-select 
+                            name="customerId"
+                            required
+                            >
+                            <mat-option value='{{data.rejectCode}}' *ngFor="let data of reasonList">{{data.rejectCode}}</mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline" id="txtFormElements">
+                            <mat-label>Select Reason</mat-label>
+                            <mat-select 
+                            name="customerId"
+                            required
+                            >
+                            <mat-option value='{{data.reason}}' *ngFor="let data of reasonList">{{data.reason}}</mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                    </div>
+                </div> 
+                <hr> 
+                <div class="float-end">
+                    <button mat-raised-button matStepperPrevious id="warnColor">Back</button>
+                    <button mat-raised-button id="primaryColor" class="ms-2"  matStepperNext>Next</button>
                 </div>
-            </div> 
-            <hr> 
+                </form>
+            </mat-step>
+
+            <mat-step  errorMessage="Address is required.">
+                <form >
+                <ng-template matStepLabel>PageType</ng-template>
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline" id="txtFormElements">
+                            <mat-label>Select Page Code</mat-label>
+                            <mat-select 
+                            name="customerId"
+                            required
+                            >
+                            <mat-option value='{{data.pageTypeCode}}' *ngFor="let data of pageList">{{data.pageTypeCode}}</mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline" id="txtFormElements">
+                            <mat-label>Select Page Name</mat-label>
+                            <mat-select 
+                            name="customerId"
+                            required
+                            >
+                            <mat-option value='{{data.PageTypeName}}' *ngFor="let data of pageList">{{data.PageTypeName}}</mat-option>
+                            </mat-select>
+                    </mat-form-field>
+                    </div>
+                </div> 
+                <hr> 
+                <div class="float-end">
+                    <button mat-raised-button  matStepperPrevious id="warnColor">Back</button>
+                    <button mat-raised-button id="primaryColor" matStepperNext class="ms-2">
+                        Next<mat-icon>navigate_next</mat-icon>   
+                    </button>
+                </div>
+                </form>
+            </mat-step>
+
+            <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <div class="alert alert-success mt-2"><h2>You have successfully completed the on boarding.</h2> </div>
             <div class="float-end">
-                <button mat-raised-button matStepperPrevious id="warnColor">Back</button>
-                <button mat-raised-button id="primaryColor" class="ms-2"  matStepperNext>Next</button>
+                <button mat-raised-button  id="warnColor" (click)="stepper.reset()">Reset</button>
+                <button mat-raised-button  id="primaryColor" class="ms-2">Save and Finish </button>
+                
             </div>
-            </form>
-        </mat-step>
-
-        <mat-step  errorMessage="Address is required.">
-            <form >
-            <ng-template matStepLabel>PageType</ng-template>
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field appearance="outline" id="txtFormElements">
-                        <mat-label>Select Page Code</mat-label>
-                        <mat-select 
-                        name="customerId"
-                        required
-                        >
-                        <mat-option value='{{data.pageTypeCode}}' *ngFor="let data of pageList">{{data.pageTypeCode}}</mat-option>
-                        </mat-select>
-                </mat-form-field>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col-md-12">
-                    <mat-form-field appearance="outline" id="txtFormElements">
-                        <mat-label>Select Page Name</mat-label>
-                        <mat-select 
-                        name="customerId"
-                        required
-                        >
-                        <mat-option value='{{data.PageTypeName}}' *ngFor="let data of pageList">{{data.PageTypeName}}</mat-option>
-                        </mat-select>
-                </mat-form-field>
-                </div>
-            </div> 
-            <hr> 
-            <div class="float-end">
-                <button mat-raised-button  matStepperPrevious id="warnColor">Back</button>
-                <button mat-raised-button id="primaryColor" matStepperNext class="ms-2">
-                    Next<mat-icon>navigate_next</mat-icon>   
-                </button>
-            </div>
-            </form>
-        </mat-step>
-
-        <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
-        <div class="alert alert-success mt-2"><h2>You have successfully completed the on boarding.</h2> </div>
-        <div class="float-end">
-            <button mat-raised-button  id="warnColor" (click)="stepper.reset()">Reset</button>
-            <button mat-raised-button  id="primaryColor" class="ms-2">Save and Finish </button>
-            
-        </div>
-        </mat-step>
-    </mat-stepper>
-  <!-- </mat-card> -->
-  </div>
+            </mat-step>
+        </mat-stepper>
+    <!-- </mat-card> -->
+    </div>
+</div>
   
