@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { LayoutModule } from './layout/layout.module';
+import { TruncatePipe } from './custom-pipes/truncate.pipe';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,

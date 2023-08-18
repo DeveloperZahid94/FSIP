@@ -19,6 +19,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatCardModule} from '@angular/material/card';
 import { CustomerOnBoardingComponent } from './customer-on-boarding/customer-on-boarding.component';
+import { AsignUnasignItemsComponent } from './asign-unasign-items/asign-unasign-items.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CustomerOnBoardingComponent } from './customer-on-boarding/customer-on-
     CustomersComponent,
     ViewCustomersComponent,
     AddEditCustomersDialogComponent,
-    CustomerOnBoardingComponent
+    CustomerOnBoardingComponent,
+    AsignUnasignItemsComponent
   ],
   imports: [
     CommonModule,

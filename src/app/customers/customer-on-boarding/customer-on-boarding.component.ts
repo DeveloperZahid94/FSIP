@@ -14,6 +14,13 @@ import { AddEditProjectsComponent } from 'src/app/projects/add-edit-projects/add
   styleUrls: ['./customer-on-boarding.component.css']
 })
 export class CustomerOnBoardingComponent implements OnInit{
+  dataSource = [
+    { id: 1, name: 'Dummy User 1', selected: false },
+    { id: 2, name: 'Dummy User 2', selected: false },
+    { id: 3, name: 'Dummy User 3', selected: false },
+    { id: 4, name: 'Dummy User 4', selected: false },
+  ];   //gets passed to the component 
+
   public customerList:any;
   public projectList:any;
   public userList:any;
@@ -98,4 +105,13 @@ public addAction(event:string,ele:any,target:string){
       this.pageList=res;
     })
   }
+
+
+  /**
+   * getting data as Per Selection in the grid from child 
+   */
+  onSelectedItemsChanged(selectedItems: any[]) {
+    console.log('Selected items: Parent', selectedItems);
+  }
+
 }

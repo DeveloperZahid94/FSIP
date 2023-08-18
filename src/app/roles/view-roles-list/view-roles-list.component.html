@@ -1,15 +1,18 @@
 <div class="container mt-2">
     <div class="card shadow">
-        <div class="card-header  position-relative">
-            <h2 class="mt-2">Roles</h2>
-            <div class="button-container mt-2 me-2 position-absolute top-0 end-0">
+        <div class="card-header  position-relative" style="height:60px;">
+            <h2 class="mt-1" id="roles-heading">
+                <mat-icon mat-list-icon>add_task</mat-icon>
+                Roles
+            </h2>
+            <div class="button-container mt-1 me-2 position-absolute top-0 end-0">
+                <button mat-raised-button id="primaryColor" (click)="roleAction('Add',null)" class="">
+                    <mat-icon>add_circle</mat-icon>
+                    Add New
+                </button>
                 <button mat-raised-button id="warnColor">
                     <mat-icon>do_not_disturb_on</mat-icon>
                     Delete
-                </button>
-                <button mat-raised-button id="primaryColor" (click)="roleAction('ADD',null)" class="">
-                    <mat-icon>add_circle</mat-icon>
-                    Add New
                 </button>
             </div>
         </div>
@@ -23,30 +26,62 @@
                 </ng-container> -->
             
                 <!-- Name Role -->
-                <ng-container matColumnDef="roleName" style="width: 20%;">
-                    <th mat-header-cell *matHeaderCellDef style="width: 20%;"> Role Name </th>
+                <ng-container matColumnDef="roleName" style="width: 10%;">
+                    <th mat-header-cell *matHeaderCellDef style="width: 15%;"> Role Name </th>
                     <td mat-cell *matCellDef="let element" > {{element.roleName}} </td>
                 </ng-container>
             
                 <!-- Description Column -->
-                <ng-container matColumnDef="description">
-                    <th mat-header-cell *matHeaderCellDef > Description </th>
+                <!-- <ng-container matColumnDef="description" style="width: 80%;">
+                    <th mat-header-cell *matHeaderCellDef style="width: 80%;"> Description </th>
                     <td mat-cell *matCellDef="let element" > {{element.description}} </td>
-                </ng-container>
+                </ng-container> -->
+                
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef> Description </th>
+                    <td mat-cell *matCellDef="let element">
+                        <div class="description-container">
+                            {{ getDescription(element.description) }}
+                            <button *ngIf="element.description.length > 90" mat-icon-button matTooltip="{{ element.description }}"
+                                    matTooltipPosition="above" [matTooltipDisabled]="element.description.length <= 10"
+                                    [matTooltipShowDelay]="300" [matTooltipHideDelay]="0">
+                              <mat-icon>more_horiz</mat-icon>
+                              <ng-template #tooltip>
+                                <div class="tooltip-content">
+                                  {{ element.description }}
+                                </div>
+                              </ng-template>
+                            </button>
+                          </div>
+                            </td>
+                  </ng-container>
+
+                        <!-- <ng-container matColumnDef="description">
+                          <th mat-header-cell *matHeaderCellDef> Description </th>
+                          <td mat-cell *matCellDef="let element">
+                            <ng-container *ngIf="element.description.length <= 50; else popoverContent">
+                              {{ element.description }}
+                            </ng-container>
+                            <ng-template #popoverContent>
+                              <span [matPopover]="element.description" matPopoverPosition="below">{{ element.description | truncate:50 }}</span>
+                            </ng-template>
+                          </td>
+                        </ng-container> -->
+                     
 
                 <ng-container matColumnDef="Action">
-                    <th mat-header-cell *matHeaderCellDef style="width: 15%;"> Action </th>
-                    <td mat-cell *matCellDef="let element" id="custom-table" style="width:10%;">
-                        <mat-icon style="color:#002855;" (click)="roleAction('EDIT',element)">edit</mat-icon>
+                    <th mat-header-cell *matHeaderCellDef style="width: 10%;"> Action </th>
+                    <td mat-cell *matCellDef="let element" id="" style="width:10%;">
+                        <mat-icon style="color:#1D4F91;" (click)="roleAction('Edit',element)">edit</mat-icon>
                         <mat-icon style="color:#FF7F32;" (click)="deleteRole(element.id)">delete</mat-icon>
                     </td>
                 </ng-container>
             
-                <tr mat-header-row *matHeaderRowDef="displayedColumns" id="custom-table"></tr>
-                <tr mat-row *matRowDef="let row; columns: displayedColumns;" id="custom-table"></tr>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns" style="height:35px;" ></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="height:35px;" ></tr>
                 </table>
             
-                <mat-paginator  [pageSizeOptions]="[5, 10, 20]"
+                <mat-paginator  [pageSizeOptions]="[10, 20, 30]"
                             showFirstLastButtons
                             aria-label="Select page of periodic elements">
                 </mat-paginator>

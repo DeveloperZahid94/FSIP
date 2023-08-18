@@ -1,0 +1,25 @@
+<div class="container mt-3">
+    <div class="item-box ">
+        <label>Un Assigned Users</label><hr>
+      <div *ngFor="let item of items">
+        <div class="customAlert">
+            <label>
+            <input type="checkbox" [checked]="item.selected" (change)="toggleItemSelection(item)" />
+            {{ item.name }}
+            </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="selected-box ">
+        <label>Assigned Users</label><hr>
+        <div *ngFor="let selectedItem of selectedItems">
+            <div class="customAlert">
+                {{ selectedItem.name }}
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- <div class="float-end mt-3">
+  <button mat-raised-button id="primaryColor" (click)="show()">Save and Assign</button>
+  </div> -->

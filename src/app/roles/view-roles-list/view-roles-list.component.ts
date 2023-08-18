@@ -36,7 +36,7 @@ export class ViewRolesListComponent implements OnInit,AfterViewInit {
    * Method To Open Dialog For Add/Edit Roles based on Action passed  
   */
   public roleAction(event:string,ele:any){
-    return this.dialog.open(AddRolesComponent, {width: '50%', height: '380px',data:{Action:event,dataObj:ele}}).afterClosed()
+    return this.dialog.open(AddRolesComponent, {width: '50%', height: '390px',data:{Action:event,dataObj:ele}}).afterClosed()
       .subscribe(res => {
         if(res){
           this.RoleList();
@@ -79,6 +79,9 @@ export class ViewRolesListComponent implements OnInit,AfterViewInit {
   }
 
 
+  public getDescription(desc:string){
+    return desc.slice(0,90);
+  }
   
   
 }

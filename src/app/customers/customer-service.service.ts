@@ -17,7 +17,6 @@ export class CustomerServiceService {
   }
 
   postCustomers(data:any):Observable<any>{
-    debugger;
     const url=`${this.baseUrl}/Customers`;
     return this._http.post(url,data);
   }

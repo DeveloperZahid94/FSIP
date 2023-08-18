@@ -9,10 +9,10 @@
   "Roles": [
     {
       "id": 6,
-      "roleName": "testing record",
+      "roleName": "record",
       "description": "Sometimes, you might need some boilerplate or filler text in a Word document.",
       "created_At": "2023-08-08T05:40:32.886Z",
-      "updated_At": "2023-08-11T09:46:06.256Z",
+      "updated_At": "2023-08-18T08:21:27.907Z",
       "isActive": "Yes"
     },
     {
@@ -70,6 +70,22 @@
       "created_At": "2023-08-11T09:45:51.688Z",
       "updated_At": null,
       "isActive": "Yes"
+    },
+    {
+      "id": 14,
+      "roleName": "height",
+      "description": "testing height",
+      "created_At": "2023-08-18T08:41:17.296Z",
+      "updated_At": null,
+      "isActive": "Yes"
+    },
+    {
+      "id": 15,
+      "roleName": "testing new ",
+      "description": "testing height ",
+      "created_At": null,
+      "updated_At": null,
+      "isActive": null
     }
   ],
   "Users": [
@@ -288,6 +304,14 @@
       "customerCode": "z100",
       "customerName": "zahid",
       "createdAt": "2023-08-16T11:30:41.808Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 6,
+      "customerCode": "1223",
+      "customerName": "maoja",
+      "createdAt": "2023-08-17T12:31:53.098Z",
       "updatedAt": null,
       "isActive": 1
     }

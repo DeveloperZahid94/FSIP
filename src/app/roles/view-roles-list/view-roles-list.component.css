@@ -18,6 +18,29 @@ td{
     color:#1D4F91;
 }
 
+/* ToolTip */
+.tooltip-content {
+    max-width: 200px;
+    word-wrap: break-word;
+  }
 
+  /* Align text adn icon */
+  .description-container {
+    display: flex;
+    align-items: center; 
+    height:35px;
+
+  }
+  
+  .tooltip-content {
+    max-width: 200px;
+    word-wrap: break-word;
+  }
+
+  #roles-heading {
+    display: flex;
+    align-items: center;
+  }
+  
 
 

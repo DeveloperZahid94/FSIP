@@ -18,6 +18,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { LayoutModule } from '../layout/layout.module';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -34,7 +35,7 @@ import { LayoutModule } from '../layout/layout.module';
     FormsModule,ReactiveFormsModule,
     MatInputModule,MatFormFieldModule,
     MatSelectModule,MatIconModule,MatButtonModule,
-    MatDialogModule,MatCheckboxModule,
+    MatDialogModule,MatCheckboxModule,MatTooltipModule,
     MatPaginatorModule, MatTableModule,
     LayoutModule
   ]

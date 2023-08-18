@@ -26,17 +26,33 @@ export class BreadCrumbComponent implements OnInit {
   }
 
   createBreadcrumbs(route: ActivatedRoute, url: string = '', breadcrumbs: { label: string, url: string }[] = []): { label: string, url: string }[] {
-    const routeSnapshot = route.snapshot;
-
-    if (routeSnapshot.data && routeSnapshot.data['breadcrumb']) {
-      breadcrumbs.push({ label: routeSnapshot.data['breadcrumb'], url: url });
+    const routeURL: string = route.snapshot.url.map(segment => segment.path).join('/');
+    if (routeURL !== '') {
+      url += `/${routeURL}`;
     }
-
-    if (routeSnapshot.firstChild) {
-      const childRoute:any = routeSnapshot.firstChild;
-      return this.createBreadcrumbs(childRoute, `${url}/${childRoute.routeConfig.path}`, breadcrumbs);
+  
+    if (route.snapshot.data && route.snapshot.data['breadcrumb']) {
+      breadcrumbs.push({ label: route.snapshot.data['breadcrumb'], url: url });
     }
-
+  
+    const children: ActivatedRoute[] = route.children;
+  
+    if (children.length === 0) {
+      return breadcrumbs;
+    }
+    for (const child of children) {
+      const newBreadcrumbs = this.createBreadcrumbs(child, url, [...breadcrumbs]);
+      breadcrumbs.push(...newBreadcrumbs);
+    }
+  
+    // Process only the first child route
+    //return this.createBreadcrumbs(children[0], url, breadcrumbs);
+    console.log("breadcrumb",breadcrumbs)
     return breadcrumbs;
   }
+
+  
+  
+  
+  
 }
