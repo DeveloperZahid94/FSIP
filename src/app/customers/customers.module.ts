@@ -18,8 +18,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { CustomerOnBoardingComponent } from './customer-on-boarding/customer-on-boarding.component';
 import { AsignUnasignItemsComponent } from './asign-unasign-items/asign-unasign-items.component';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
 
 @NgModule({
@@ -28,18 +32,19 @@ import { AsignUnasignItemsComponent } from './asign-unasign-items/asign-unasign-
     ViewCustomersComponent,
     AddEditCustomersDialogComponent,
     CustomerOnBoardingComponent,
-    AsignUnasignItemsComponent
+    AsignUnasignItemsComponent,
+    FilterPipePipe
   ],
   imports: [
     CommonModule,
     CustomersRoutingModule,
     LayoutModule,
-    FormsModule,ReactiveFormsModule,
-    MatInputModule,MatFormFieldModule,
+    FormsModule,ReactiveFormsModule,MatButtonToggleModule,
+    MatInputModule,MatFormFieldModule,MatCheckboxModule,
     MatSelectModule,MatIconModule,MatButtonModule,
     MatDialogModule,MatRadioModule,MatStepperModule,
     MatPaginatorModule, MatTableModule,MatCardModule,
-    LayoutModule,
+    MatTooltipModule
   ]
 })
 export class CustomersModule { }

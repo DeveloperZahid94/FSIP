@@ -46,7 +46,7 @@ export class AddEditProjectsComponent {
   */
   public addUpdateProject(){
     console.log(this.projectForm.value);
-    if(this.data.Action==='ADD'){
+    if(this.data.Action==='Add'){
       this.addProject();
     }else{
       this.updateProject();

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CustomerServiceService } from '../customer-service.service';
 import { UserServiceService } from 'src/app/users/user-service.service';
 import { ProjectServiceService } from 'src/app/projects/project-service.service';
@@ -14,18 +14,15 @@ import { AddEditProjectsComponent } from 'src/app/projects/add-edit-projects/add
   styleUrls: ['./customer-on-boarding.component.css']
 })
 export class CustomerOnBoardingComponent implements OnInit{
-  dataSource = [
-    { id: 1, name: 'Dummy User 1', selected: false },
-    { id: 2, name: 'Dummy User 2', selected: false },
-    { id: 3, name: 'Dummy User 3', selected: false },
-    { id: 4, name: 'Dummy User 4', selected: false },
-  ];   //gets passed to the component 
+  dataSource :any[]=[];   //gets passed to the component 
 
   public customerList:any;
   public projectList:any;
   public userList:any;
   public reasonList:any;
   public pageList:any;
+  public ScreenText:string=''
+  public isActive: boolean = false;
 
 constructor(
   private dialog: MatDialog,
@@ -33,17 +30,14 @@ private _customerService:CustomerServiceService,
 private _userService:UserServiceService,
 private _projectService:ProjectServiceService,
 private _reasonService:RejectionReasonServiceService,
-private _pageService:PageTypeServiceService
+private _pageService:PageTypeServiceService,
 ){}
 
 
   ngOnInit(){
     this.getProjects();
     this.getCustomers();
-    this.getUsers();
-    this.getReasons();
-    this.getPageTypes()
-
+    this.getPageTypes();
   }
 
 
@@ -82,20 +76,23 @@ public addAction(event:string,ele:any,target:string){
     this._customerService.getCustomers().subscribe((res:[])=>{
       console.log(res);
       this.customerList=res;
+      this.dataSource=res
     })
   }
 
   private getUsers(){
     this._userService.getUsers().subscribe((res:[])=>{
-      console.log(res);
+      console.log("Users",res);
       this.userList=res;
+      this.dataSource=res
     })
   }
 
   private getReasons(){
     this._reasonService.getReject().subscribe((res:[])=>{
-      console.log(res);
+      console.log("reasons",res);
       this.reasonList=res;
+      this.dataSource=res
     })
   }
 
@@ -107,11 +104,44 @@ public addAction(event:string,ele:any,target:string){
   }
 
 
+  public onTabClicked(event:any){
+    if (event.selectedIndex !== undefined) {
+      console.log(`Step clicked: ${event.selectedIndex}`);
+     
+      switch(event.selectedIndex){
+        case 2:{
+          this._customerService.screenText.next('users');
+          this.getUsers();
+          break;
+        }
+        case 3:{
+          this._customerService.screenText.next('reason');
+          this.getReasons();
+          break;
+        }
+        default:
+          this._customerService.screenText.next('');
+      }
+    }
+  }
+  
+
+
   /**
    * getting data as Per Selection in the grid from child 
    */
   onSelectedItemsChanged(selectedItems: any[]) {
     console.log('Selected items: Parent', selectedItems);
   }
+
+
+     /**
+     * To Select Group User in Search list or Not 
+     */
+     toggleButton() {
+      this.isActive = !this.isActive;
+      console.log(this.isActive);
+      this.isActive? this.dataSource=[]:this.getUsers();
+    }
 
 }

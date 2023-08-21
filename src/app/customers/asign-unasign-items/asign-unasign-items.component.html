@@ -1,25 +1,56 @@
-<div class="container mt-3">
-    <div class="item-box ">
-        <label>Un Assigned Users</label><hr>
-      <div *ngFor="let item of items">
-        <div class="customAlert">
-            <label>
-            <input type="checkbox" [checked]="item.selected" (change)="toggleItemSelection(item)" />
-            {{ item.name }}
-            </label>
-        </div>
-      </div>
-    </div>
-    
-    <div class="selected-box ">
-        <label>Assigned Users</label><hr>
-        <div *ngFor="let selectedItem of selectedItems">
-            <div class="customAlert">
-                {{ selectedItem.name }}
+ 
+<div class="container mt-1">
+      <div class="card item-box">
+            <div class="card-header">
+              <div class="input-container">
+              <input type="text" [(ngModel)]="searchText"  placeholder="search unassigned {{customText}}" class="form-control" >
+              <div class="checkbox-container" >
+                <mat-checkbox [(ngModel)]="selectAll" (change)="toggleSelectAll()" matTooltip="Select All"></mat-checkbox>
+              </div>
             </div>
+          </div>
+          <div class="card-body">
+           
+            <div *ngIf="items.length > 0; else noItemsFound">
+                <div *ngFor="let item of items | filterPipe: searchText" >
+                  <div class="customAlert">
+                      <label>
+                      <input type="checkbox" [checked]="item.selected" (change)="toggleItemSelection(item)" />
+                      {{getKeyUnSelected(item)}}
+                      </label>
+                  </div>
+                </div>
+            </div>
+            <ng-template #noItemsFound>
+              <div class="alert alert-info">
+                <label>
+                  No Group User Found
+                </label>
+              </div>
+            </ng-template>
+          </div>
+      </div>
+
+      <div class="center-icons" style="margin-top:12%;">
+        <button mat-fab id="primaryColor"  class="icon-button" (click)="asignUnAsign()" >
+        <mat-icon>code</mat-icon>
+      </button>
+      </div>
+      <!-- <button class="icon-button"  (click)="unAsign()"><</button> -->
+
+    <div class="card selected-box">
+        <div class="card-header">
+          <label>Assigned {{customText}}</label>
+        </div>
+        <div class="card-body">
+          <div *ngFor="let selectedItem of selectedItems">
+              <div class="customAlert">
+                {{getKeyForSelected(selectedItem)}}
+              </div>
+          </div>
         </div>
     </div>
-  </div>
+</div>
   <!-- <div class="float-end mt-3">
   <button mat-raised-button id="primaryColor" (click)="show()">Save and Assign</button>
   </div> -->

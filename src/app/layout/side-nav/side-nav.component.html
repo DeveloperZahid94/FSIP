@@ -2,8 +2,11 @@
 <mat-sidenav-container autosize>
   <mat-sidenav #sidenav mode="side" opened="true">
     <mat-nav-list>
-        <mat-list-item id="listItems" class="custom-menu-item">
-          <mat-icon mat-list-icon class="chevron-button sidenav-button" style="margin-top:-15px;margin-left:20px;" (click)="isExpanded=!isExpanded" [ngClass]="{'rotated':isExpanded}">keyboard_double_arrow_left</mat-icon>
+        <mat-list-item id="listItems" class="custom-menu-item" style="background-color:#FF7F32;margin-top:-7px;">
+        <div id="DashboardList" >
+          <span *ngIf="isExpanded"style="font-size:18px;font-weight:700">FlexiCapture</span>
+          <mat-icon mat-list-icon class="chevron-button sidenav-button" (click)="isExpanded=!isExpanded" [ngClass]="{'rotated':isExpanded}">keyboard_double_arrow_left</mat-icon>
+        </div> 
         </mat-list-item>
         <mat-divider id="dividerColor"></mat-divider>
 

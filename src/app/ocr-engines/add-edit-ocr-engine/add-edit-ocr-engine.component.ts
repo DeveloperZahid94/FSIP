@@ -46,7 +46,7 @@ export class AddEditOcrEngineComponent {
   */
   public addUpdateOCREngine(){
     console.log(this.OCREngineForm.value);
-    if(this.data.Action==='ADD'){
+    if(this.data.Action==='Add'){
       this.addOCREngine();
     }else{
       this.updateOCREngine();

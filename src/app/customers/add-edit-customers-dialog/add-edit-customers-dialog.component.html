@@ -36,14 +36,14 @@
       </div> 
   <hr>
       <div class="Action"> 
+        <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
+          <mat-icon>cancel</mat-icon>
+          Cancel
+      </button>
         <button mat-raised-button id="primaryColor" [disabled]="!customerForm.valid" (click)="addUpdateCustomer()" class="float-end p-3">
             <mat-icon>add</mat-icon>
-            {{this.data.Action}} And Continue
-        </button>
-        <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
-            <mat-icon>cancel</mat-icon>
-            Cancel
-        </button>
+            Save and Continue
+        </button>  
    </div>
     </form>
   </div>

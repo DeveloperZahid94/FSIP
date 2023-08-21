@@ -5,8 +5,8 @@
 
   .item-box,
   .selected-box {
-    border: 1px solid #e2e2e2;
-    padding: 10px;
+    border-bottom: 1px solid #e2e2e2;
+    /* padding: 10px; */
     width: 45%;
     max-height: 300px;
     overflow-y: auto;
@@ -21,3 +21,31 @@
     margin-bottom:5px;
     border-radius:3px;
   }
+
+  .input-container {
+    position: relative;
+    display: inline-block; /* or display: flex; depending on your layout needs */
+    width:100%;
+  }
+  
+  .checkbox-container {
+    position: absolute;
+    top: 50%; 
+    right: 0;
+    transform: translateY(-50%); 
+  }
+  .input-container input {
+    /* padding-left: 40px; */
+    width:90%;
+    border: none;
+  }
+  .center-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+    height:50%
+  }
+
+
+  
+  

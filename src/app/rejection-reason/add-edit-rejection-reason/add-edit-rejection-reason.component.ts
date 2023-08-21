@@ -46,7 +46,7 @@ export class AddEditRejectionReasonComponent {
   */
   public addUpdateRejection(){
     console.log(this.rejectReasonForm.value);
-    if(this.data.Action==='ADD'){
+    if(this.data.Action==='Add'){
       this.addRejection();
     }else{
       this.updateRejection();

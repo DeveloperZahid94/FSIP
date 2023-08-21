@@ -14,3 +14,7 @@
 td{
     color:#1D4F91;
 }
+#roles-heading {
+    display: flex;
+    align-items: center;
+  }

@@ -145,13 +145,14 @@ mat-sidenav {
       align-items: center;
     }
     
-    .custom-menu-item .icon {
-      margin-right: 8px; /* Adjust this margin as needed */
+    .custom-menu-item  {
+      margin-right: 8px; 
       vertical-align: middle;
     }
     #iconColor{
       color:#FF7F32 !important;
     }
+ 
 
 
   

@@ -1,7 +1,7 @@
 <div class="container-fluid mt-3 position-relative">
   <form [formGroup]="userForm">
     <div class="p-2">
-      <h1>{{this.data.Action}} USERS</h1><hr>
+      <h1>{{this.data.Action}} Users</h1><hr>
   </div>
     <div class="row">
       <div class="col-md-6">
@@ -221,14 +221,15 @@
 
 <hr>
     <div class="Action" > 
+      <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
+        <mat-icon>cancel</mat-icon>
+        Cancel
+    </button>
       <button mat-raised-button id="primaryColor" [disabled]="!userForm.valid" (click)="addUpdateRole()" class="float-end p-3">
           <mat-icon>add</mat-icon>
-          {{this.data.Action}} And Continue
+          Save and Continue
       </button>
-      <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">
-          <mat-icon>cancel</mat-icon>
-          Cancel
-      </button>
+     
  </div>
   </form>
 </div>

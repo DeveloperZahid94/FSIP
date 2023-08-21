@@ -47,7 +47,7 @@ export class AddEditCustomersDialogComponent implements OnInit {
   */
   public addUpdateCustomer(){
     console.log(this.customerForm.value);
-    if(this.data.Action==='ADD'){
+    if(this.data.Action==='Add'){
       this.addCustomers();
     }else{
       this.updateCustomer();

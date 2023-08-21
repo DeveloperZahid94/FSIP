@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerServiceService {
   public baseUrl="http://localhost:3000";      ///Temporary Need To Be pushed To Env
+  public screenText=new BehaviorSubject('');
 
   constructor(private _http:HttpClient) { }
 

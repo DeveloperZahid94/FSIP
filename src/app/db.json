@@ -91,16 +91,18 @@
   "Users": [
     {
       "id": 1,
-      "userName": "zahid updted record",
+      "userName": "zahid record",
       "firstName": "zahid",
       "lastName": "xxx",
       "email": "zahiddar944@gmail.com",
-      "phone": "xxxxxx",
+      "phone": "1234567891",
       "domainName": "xxx",
-      "countryCode": "option",
+      "countryCode": "91",
       "currencyCode": "option",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
       "createdAt": "2023-08-10T06:15:41.911Z",
-      "updatedAt": "2023-08-10T09:36:26.781Z",
+      "updatedAt": "2023-08-21T05:06:50.339Z",
       "timeZone": "xxxx",
       "defaultRoleId": "option",
       "managerId": "",
@@ -108,16 +110,18 @@
     },
     {
       "id": 2,
-      "userName": "zahid testing update ",
+      "userName": "zahid update ",
       "firstName": "zahid",
-      "lastName": "jjjj",
+      "lastName": "Update",
       "email": "zahiddar944@gmail.com",
-      "phone": "jnjnjn",
+      "phone": "1234567890",
       "domainName": "test domain",
-      "countryCode": "option",
+      "countryCode": "93",
       "currencyCode": "option",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
       "createdAt": "2023-08-10T06:34:51.499Z",
-      "updatedAt": "2023-08-10T09:37:20.471Z",
+      "updatedAt": "2023-08-21T05:07:07.803Z",
       "timeZone": "12121",
       "defaultRoleId": "option",
       "managerId": "",
@@ -129,11 +133,165 @@
       "firstName": "zahid",
       "lastName": "vvv",
       "email": "zahiddar944@gmail.com",
-      "phone": "123123",
+      "phone": "1234567897",
       "domainName": "test domain",
       "countryCode": "91",
       "currencyCode": "Manager1",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
       "createdAt": "2023-08-11T06:59:50.699Z",
+      "updatedAt": "2023-08-21T05:07:41.781Z",
+      "timeZone": "ist",
+      "defaultRoleId": "R1",
+      "managerId": null,
+      "isActive": "0"
+    },
+    {
+      "id": 4,
+      "userName": "Zahid23",
+      "firstName": "Zahid",
+      "lastName": "23",
+      "email": "zahid.anjum@neosoftmail.com",
+      "phone": "1234567898",
+      "domainName": "tt",
+      "countryCode": "91",
+      "currencyCode": "option",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
+      "createdAt": "2023-08-18T17:26:32.105Z",
+      "updatedAt": "2023-08-21T05:07:17.012Z",
+      "timeZone": "ist",
+      "defaultRoleId": "R2",
+      "managerId": null,
+      "isActive": 1
+    },
+    {
+      "id": 5,
+      "userName": "zahid878",
+      "firstName": "zahid",
+      "lastName": "Dar",
+      "email": "zahiddar944@gmail.com",
+      "phone": "1234567896",
+      "domainName": "xxx",
+      "countryCode": "54",
+      "currencyCode": "option",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
+      "createdAt": "2023-08-10T06:15:41.911Z",
+      "updatedAt": "2023-08-21T05:07:52.927Z",
+      "timeZone": "xxxx",
+      "defaultRoleId": "R2",
+      "managerId": "",
+      "isActive": 1
+    },
+    {
+      "id": 6,
+      "userName": "zahid878",
+      "firstName": "zahid",
+      "lastName": "Dar",
+      "email": "zahiddar944@gmail.com",
+      "phone": "1234567895",
+      "domainName": "xxx",
+      "countryCode": "54",
+      "currencyCode": "option",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
+      "createdAt": "2023-08-10T06:15:41.911Z",
+      "updatedAt": "2023-08-21T05:08:15.094Z",
+      "timeZone": "xxxx",
+      "defaultRoleId": "R3",
+      "managerId": "",
+      "isActive": 1
+    },
+    {
+      "id": 7,
+      "userName": "zahid23",
+      "firstName": "zahid",
+      "lastName": "Dar",
+      "email": "zahiddar944@gmail.com",
+      "phone": "1234567892",
+      "domainName": "xxx",
+      "countryCode": "93",
+      "currencyCode": "option",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
+      "createdAt": "2023-08-10T06:15:41.911Z",
+      "updatedAt": "2023-08-21T05:08:32.232Z",
+      "timeZone": "xxxx",
+      "defaultRoleId": "R2",
+      "managerId": "",
+      "isActive": 1
+    },
+    {
+      "id": 8,
+      "userName": "zahid21",
+      "firstName": "zahid",
+      "lastName": "Dar",
+      "email": "zahiddar944@gmail.com",
+      "phone": "1234567895",
+      "domainName": "xxx",
+      "countryCode": "93",
+      "currencyCode": "option",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
+      "createdAt": "2023-08-10T06:15:41.911Z",
+      "updatedAt": "2023-08-21T05:08:50.238Z",
+      "timeZone": "xxxx",
+      "defaultRoleId": "R2",
+      "managerId": "",
+      "isActive": 1
+    },
+    {
+      "id": 9,
+      "userName": "zahid updted",
+      "firstName": "zahid",
+      "lastName": "dar",
+      "email": "zahiddar944@gmail.com",
+      "phone": "9874561230",
+      "domainName": "xxx",
+      "countryCode": "93",
+      "currencyCode": "Manager3",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
+      "createdAt": "2023-08-10T06:15:41.911Z",
+      "updatedAt": "2023-08-21T05:09:08.396Z",
+      "timeZone": "xxxx",
+      "defaultRoleId": "R1",
+      "managerId": "",
+      "isActive": 1
+    },
+    {
+      "id": 10,
+      "userName": "zahid12",
+      "firstName": "zahid",
+      "lastName": "Dar",
+      "email": "zahiddar944@gmail.com",
+      "phone": "6549871230",
+      "domainName": "xxx",
+      "countryCode": "61",
+      "currencyCode": "option",
+      "locationType": "Loc3",
+      "locationCode": "LC4",
+      "createdAt": "2023-08-10T06:15:41.911Z",
+      "updatedAt": "2023-08-21T05:09:34.975Z",
+      "timeZone": "xxxx",
+      "defaultRoleId": "option",
+      "managerId": "",
+      "isActive": 1
+    },
+    {
+      "id": 11,
+      "userName": "Manoja",
+      "firstName": "zahid",
+      "lastName": "anjum",
+      "email": "M@gmail.com",
+      "phone": "1231231231",
+      "domainName": "test domain",
+      "countryCode": "91",
+      "currencyCode": "Manager1",
+      "locationType": "Loc1",
+      "locationCode": "LC1",
+      "createdAt": "2023-08-21T11:46:57.458Z",
       "updatedAt": null,
       "timeZone": "ist",
       "defaultRoleId": "R1",
@@ -144,21 +302,147 @@
   "PageType": [
     {
       "id": 1,
-      "pageTypeCode": "test Rejection ",
+      "pageTypeCode": "page-889",
       "PageTypeName": "rejection Reason",
       "description": "testProj is a rejection description",
       "createdAt": "2023-08-11T12:52:57.068Z",
-      "updatedAt": "2023-08-11T12:52:57.068Z",
+      "updatedAt": "2023-08-21T04:39:58.445Z",
       "isActive": 1
     },
     {
       "id": 2,
       "pageTypeCode": "testCode",
-      "PageTypeName": "vvvv",
-      "description": "vvvvv",
+      "PageTypeName": "Page test",
+      "description": "This is the Demo page ",
       "createdAt": "2023-08-16T06:15:42.998Z",
+      "updatedAt": "2023-08-21T04:42:35.814Z",
+      "isActive": 1
+    },
+    {
+      "id": 3,
+      "pageTypeCode": "Page-100",
+      "PageTypeName": "page new ",
+      "description": "this is a demo page ",
+      "createdAt": "2023-08-21T04:36:18.853Z",
       "updatedAt": null,
       "isActive": 1
+    },
+    {
+      "id": 4,
+      "pageTypeCode": "Page-121",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": "2023-08-21T04:38:12.158Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 5,
+      "pageTypeCode": "Page-120",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 6,
+      "pageTypeCode": "Page-130",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 7,
+      "pageTypeCode": "page-300",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 8,
+      "pageTypeCode": "Page-150",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 9,
+      "pageTypeCode": "page-178",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 10,
+      "pageTypeCode": "Page-700",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": "2023-08-21T04:40:32.017Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 11,
+      "pageTypeCode": "page-852",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 12,
+      "pageTypeCode": "page-400",
+      "PageTypeName": "page type new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 13,
+      "pageTypeCode": "Page-401",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 14,
+      "pageTypeCode": "page-8070",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 15,
+      "pageTypeCode": "Page-807",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 16,
+      "pageTypeCode": "Page-4210",
+      "PageTypeName": "page new ",
+      "description": "This is the Demo page ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
     }
   ],
   "RejectReason": [
@@ -168,7 +452,7 @@
       "reason": "rejection Reason",
       "description": "testProj is a rejection description",
       "createdAt": "2023-08-11T12:52:57.068Z",
-      "updatedAt": "2023-08-11T12:52:57.068Z",
+      "updatedAt": "2023-08-18T17:50:30.389Z",
       "isActive": 1
     },
     {
@@ -179,6 +463,87 @@
       "createdAt": "2023-08-14T11:34:29.779Z",
       "updatedAt": null,
       "isActive": 1
+    },
+    {
+      "id": 3,
+      "rejectCode": "R-1234567891",
+      "reason": "Not Accepted",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": "2023-08-21T04:55:56.072Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 4,
+      "rejectCode": "R-1234567892",
+      "reason": "Reasons To Check",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 5,
+      "rejectCode": "R-1234567893",
+      "reason": "Not Accepted",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 6,
+      "rejectCode": "R-1234567895",
+      "reason": "Reasons To Check",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 7,
+      "rejectCode": "R-1234567898",
+      "reason": "Reasons To Check",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 8,
+      "rejectCode": "R-1234567821",
+      "reason": "Reasons To Check",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 9,
+      "rejectCode": "R-101234",
+      "reason": "Reasons To Check",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 10,
+      "rejectCode": "R-101235",
+      "reason": "Reasons To Check",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": "2023-08-21T04:57:44.983Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 11,
+      "rejectCode": "R-101239",
+      "reason": "Reasons To Check",
+      "description": "The is not accepted Dummy selection ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
     }
   ],
   "OCREngines": [
@@ -208,6 +573,60 @@
       "createdAt": "2023-08-14T11:33:09.202Z",
       "updatedAt": null,
       "isActive": "0"
+    },
+    {
+      "id": 4,
+      "engineCode": "ENG-10254",
+      "engineName": "ENGINE QWE",
+      "description": " Machine which reduces human efforts ",
+      "createdAt": "2023-08-21T04:59:55.097Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 5,
+      "engineCode": "ENG-1027",
+      "engineName": "BoreWel Engine s",
+      "description": " Machine which reduces human efforts ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 6,
+      "engineCode": "ENG-101",
+      "engineName": "TubeWell Dev",
+      "description": "testing demo",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 7,
+      "engineCode": "TEST ENGINE",
+      "engineName": "BoreWel Engine s",
+      "description": " Machine which reduces human efforts ",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 8,
+      "engineCode": "ENG-101",
+      "engineName": "TubeWell Dev",
+      "description": "testing demo",
+      "createdAt": "2023-08-21T05:00:32.045Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 9,
+      "engineCode": "ENG-1022",
+      "engineName": "TubeWell Dev",
+      "description": "testing demo",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
     }
   ],
   "Projects": [
@@ -264,6 +683,42 @@
       "createdAt": "2023-08-14T11:31:36.487Z",
       "updatedAt": null,
       "isActive": "0"
+    },
+    {
+      "id": 7,
+      "customerId": "C100",
+      "projectCode": "P-123",
+      "projectName": "Dummy Project 1",
+      "createdAt": "2023-08-21T04:58:18.839Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 8,
+      "customerId": "C101",
+      "projectCode": "P-1287",
+      "projectName": "UX Design",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": "0"
+    },
+    {
+      "id": 9,
+      "customerId": "C103",
+      "projectCode": "P-1897",
+      "projectName": "Database Design",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 10,
+      "customerId": "C103",
+      "projectCode": "P-85124",
+      "projectName": "Web Design",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
     }
   ],
   "Customers": [
@@ -314,6 +769,22 @@
       "createdAt": "2023-08-17T12:31:53.098Z",
       "updatedAt": null,
       "isActive": 1
+    },
+    {
+      "id": 7,
+      "customerCode": "M12",
+      "customerName": "Manoja",
+      "createdAt": "2023-08-21T11:46:10.353Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 8,
+      "customerCode": "B212",
+      "customerName": "Bala",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
     }
   ]
 }

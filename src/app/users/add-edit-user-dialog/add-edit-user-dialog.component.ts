@@ -56,7 +56,7 @@ export class AddEditUserDialogComponent implements OnInit{
   */
   public addUpdateRole(){
     console.log(this.userForm.value);
-    if(this.data.Action==='ADD'){
+    if(this.data.Action==='Add'){
       this.addRole();
     }else{
       this.updateRole();

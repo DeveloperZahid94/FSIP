@@ -10,3 +10,27 @@
     font-size: 22px;
     line-height: 27px;
 }
+#roles-heading {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-button {
+  border: none;
+  background-color: #e0e0e0;
+  color: #333;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  outline: none;
+}
+
+.toggle-button.active {
+  background-color:#FF7F32;
+  color: #fff;
+}
+
+.button-label {
+  margin-right: 5px;
+}
