@@ -1,0 +1,11 @@
+.condition {
+    margin-bottom: 10px;
+  }
+  .rowColor{
+    background-color: rgb(237, 237, 237);
+    padding:20px;;
+  }
+  .linkStyle{
+    cursor: pointer;
+    color: blue;
+  }

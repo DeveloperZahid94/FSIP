@@ -1,0 +1,71 @@
+<form [formGroup]="mainForm" class="mt-2">
+  <div class="row">
+    <div class="col-md-12" *ngFor="let conditionGroup of conditionGroups.controls; let i = index">
+      <div [formGroup]="conditionGroup" class="condition">
+        <div class="row rowColor">
+          <div class="col-md-1 mt-3">
+            <span *ngIf="i > 0">
+              <select formControlName="logicalOperator" class="form-control">
+                <option *ngFor="let option of logicalOperatorOptions" [value]="option.value">{{ option.label }}</option>
+              </select>
+            </span>
+            <span *ngIf="i==0">
+              <h3 class="">
+                <b>IF</b>
+              </h3>
+            </span>
+            
+          </div>
+          <div class="col-md-3">
+            <label>Select Field</label>
+            <select formControlName="selectedItem" class="form-control">
+              <option *ngFor="let option of conditionOptions" [value]="option.value">{{ option.label }}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label>Select Condition</label>
+            <select formControlName="selectedCondition"  class="form-control">      <!-- (change)="conditionChanged(i)" -->
+              <option *ngFor="let option of conditionTypeOptions" [value]="option.value">{{ option.label }}</option>
+            </select>
+          </div>
+          <div class="col-md-3" >
+            <label>Enter Value</label>
+            <input type="text" formControlName="beginsWithValue" placeholder="Enter value" class="form-control"/>
+          </div>
+          <div class="col-md-2 mt-4">
+            <mat-icon style="color:#FF7F32;" (click)="removeCondition(i)" *ngIf="i !== 0" matTooltip="click to Remove Condition">cancel</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span (click)="addCondition()" class="linkStyle">Add New Condition</span>  <!-- (click)="addCondition()" -->
+<hr>
+  <div class="row rowColor">
+    <div class="col-md-12">
+      <div class="final-action">
+        <label for="finalAction">Then Final Action: </label>
+        <input type="text" id="finalAction" formControlName="finalAction" class="form-control w-50" />
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="action-buttons">
+        <!-- <button (click)="addCondition()">Add New Condition</button> -->
+        <!-- <button (click)="performAction()">Perform Action</button> -->
+        <button mat-raised-button (click)="saveRule()" id="primaryColor">Save Rule</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div *ngIf="finalResult" class="row">
+  <div class="col-md-12">
+    <div class="final-result">
+      Final Result: {{ finalResult }}
+    </div>
+  </div>
+</div>

@@ -24,6 +24,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { CustomerOnBoardingComponent } from './customer-on-boarding/customer-on-boarding.component';
 import { AsignUnasignItemsComponent } from './asign-unasign-items/asign-unasign-items.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { QueuesOnBoardComponent } from './queues-on-board/queues-on-board.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     AddEditCustomersDialogComponent,
     CustomerOnBoardingComponent,
     AsignUnasignItemsComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    QueuesOnBoardComponent
   ],
   imports: [
     CommonModule,

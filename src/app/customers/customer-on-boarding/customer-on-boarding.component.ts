@@ -23,9 +23,21 @@ export class CustomerOnBoardingComponent implements OnInit{
   public pageList:any;
   public ScreenText:string=''
   public isActive: boolean = false;
+  public selectedSearchType='users';
+
+  // QUEues 
+
+name: string = '';
+selectedCondition: string = '';
+result: string | null = null;
+
+conditionOptions: any[] = [
+  { value: 'containsSat', label: 'Name contains "sat"' },
+  { value: 'startsWithAt', label: 'Name starts with "@"' }
+];
 
 constructor(
-  private dialog: MatDialog,
+private dialog: MatDialog,
 private _customerService:CustomerServiceService,
 private _userService:UserServiceService,
 private _projectService:ProjectServiceService,
@@ -39,30 +51,6 @@ private _pageService:PageTypeServiceService,
     this.getCustomers();
     this.getPageTypes();
   }
-
-
-/** 
-   * Method To Open Dialog For Add/Edit customer based on Action passed  
-  */
-public addAction(event:string,ele:any,target:string){
-  if(target=='Customer'){
-    return this.dialog.open(AddEditCustomersDialogComponent, {width: '50%', height: '350px',data:{Action:event,dataObj:ele}}).afterClosed()
-    .subscribe(res => {
-      if(res){
-        this.getCustomers();
-      }
-        
-    });
-  }else{
-    return this.dialog.open(AddEditProjectsComponent, {width: '50%', height: '350px',data:{Action:event,dataObj:ele}}).afterClosed()
-    .subscribe(res => {
-      if(res){
-        this.projectList();
-      }  
-    });
-  }
-  
-}
 
 
   private getProjects(){
@@ -103,7 +91,9 @@ public addAction(event:string,ele:any,target:string){
     })
   }
 
-
+  /**
+   * To hanfle logic of assing data for User/Reason 
+   */
   public onTabClicked(event:any){
     if (event.selectedIndex !== undefined) {
       console.log(`Step clicked: ${event.selectedIndex}`);
@@ -128,20 +118,31 @@ public addAction(event:string,ele:any,target:string){
 
 
   /**
-   * getting data as Per Selection in the grid from child 
+   * getting data as Per Selection in the grid from child for User/Reason 
    */
   onSelectedItemsChanged(selectedItems: any[]) {
     console.log('Selected items: Parent', selectedItems);
   }
 
 
-     /**
-     * To Select Group User in Search list or Not 
-     */
-     toggleButton() {
-      this.isActive = !this.isActive;
-      console.log(this.isActive);
-      this.isActive? this.dataSource=[]:this.getUsers();
+ /**
+     * To Select Group User in dropdown or Not 
+*/
+  onSearchTypeSelected(searchType: string) {
+    this.selectedSearchType = searchType;
+    console.log(searchType)
+    if (searchType === 'users') {
+     this.getUsers();
+    } else if (searchType === 'userGroups') {
+      this.dataSource=[];
     }
+  }
 
+
+  /**
+   * getting data as Per Selection in the coditional Queues from child 
+   */
+  onSelectedQueueChanged(selectedItems: any[]) {
+    console.log('Selected items queues: Parent', selectedItems);
+  }
 }

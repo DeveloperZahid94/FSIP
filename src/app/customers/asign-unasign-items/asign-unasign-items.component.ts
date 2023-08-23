@@ -13,9 +13,12 @@ export class AsignUnasignItemsComponent implements OnInit {
   selectedItems:any[] = [];
   itemsToPush:any[] = [];
 
-  searchText:any='';
+  searchTextUnAssigned:any='';
   selectAll: boolean = false;
   screenText:string='';
+
+  searchTextAssg: string = '';
+  selectAllAssg: boolean = false;
 
 
   constructor(private _customerService:CustomerServiceService){}
@@ -26,51 +29,8 @@ export class AsignUnasignItemsComponent implements OnInit {
     })
   }
 
-
-
-  /** 
-   * on selection the items From Grid @param item 
-   */
-  public toggleItemSelection(item: any) {
-    item.selected = !item.selected;
-    if (item.selected) {
-      this.itemsToPush.push(item);
-    } else {
-      const index = this.itemsToPush.findIndex(selectedItem => selectedItem.id === item.id);
-      if (index !== -1) {
-        this.itemsToPush.splice(index, 1);
-      }
-    }
-  }
- 
-  
-  public toggleSelectAll() {
-    this.selectAll = !this.selectAll;
-    let flag=!this.selectAll;
-    this.selectAll=flag
-    this.items.forEach(item => item.selected = flag);
-  }
-
-
-/**
- * To Assign/UnAssign Checked Items
- */
-  public asignUnAsign(){
-    this.updateSelectedItems();
-  }
-
-
-/**
- *  Emit the selected items to the parent component
- */
-    private updateSelectedItems() {
-      this.selectedItems = this.items.filter(item => item.selected);
-      this.selectedItemsChanged.emit(this.selectedItems);
-    }
-
-
-  /**
-   * @param item to fech which key need to be displayed 
+  /** to fetch which key need to be displayed
+   * @param item  
    * @returns 
    */
   getKeyUnSelected(item: any): string {
@@ -82,9 +42,9 @@ export class AsignUnasignItemsComponent implements OnInit {
   }
   
 
-    /**
-   * 
-   * @param item to fech which key need to be displayed for Selected Ones 
+  /**
+   *  to fetch which key need to be displayed for Selected Ones 
+   * @param item 
    * @returns 
    */
     getKeyForSelected(item: any): string {
@@ -95,7 +55,54 @@ export class AsignUnasignItemsComponent implements OnInit {
       }
     }
 
+
+
+    public toggleItemSelection(item: any) {
+      item.selected = !item.selected;
+    }
   
+    public toggleAssignedSelection(item: any) {
+      item.selected = !item.selected;
+    }
+  
+    public toggleSelectAllUnAssigned() {
+      this.selectAll = !this.selectAll;
+      let flag = !this.selectAll;
+      this.selectAll = flag;
+      this.items.forEach(item => item.selected = flag);
+    }
+
+    // public toggleSelectAll2() {
+    //   this.selectAllAssg = !this.selectAllAssg;
+    //   let flag = !this.selectAllAssg;
+    //   this.selectedItems.forEach(item => item.selected = flag);
+    // }
+  
+/**
+ * To Assign Checked Items and Emit the selected items to the parent component
+ */
+    public assignSelected() {
+      const selectedForAssignment = this.items.filter(item => item.selected);
+      this.selectedItems = this.selectedItems.concat(selectedForAssignment);
+      this.items = this.items.filter(item => !item.selected);
+      this.selectedItemsChanged.emit(this.selectedItems);
+    }
+  
+/**
+ * To UnAssign Checked Items and Emit the selected items to the parent component
+ */
+    public unassignSelected() {
+      const selectedForUnassignment = this.selectedItems.filter(item => item.selected);
+      this.items = this.items.concat(selectedForUnassignment);
+      this.selectedItems = this.selectedItems.filter(item => !item.selected);
+      this.selectedItemsChanged.emit(this.selectedItems);
+    }
+
+
+    
+  
+
+    
  
   
 

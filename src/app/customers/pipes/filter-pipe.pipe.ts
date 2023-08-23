@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipePipe implements PipeTransform {
 
   transform(Listvalue:any[], fliterString:string): any[] {
-    debugger
     if(Listvalue?.length==0 || fliterString==''){
       return Listvalue;
     }
