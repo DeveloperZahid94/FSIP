@@ -1,0 +1,20 @@
+.card-header{
+    background: #002855;
+    color:white;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.button-container button {
+    margin-right: 10px;
+}
+td{
+    color:#1D4F91;
+}
+#roles-heading {
+    display: flex;
+    align-items: center;
+  }

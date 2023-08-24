@@ -9,82 +9,82 @@
   "Roles": [
     {
       "id": 6,
-      "roleName": "record",
+      "roleName": "R-12",
       "description": "Sometimes, you might need some boilerplate or filler text in a Word document.",
       "created_At": "2023-08-08T05:40:32.886Z",
-      "updated_At": "2023-08-18T08:21:27.907Z",
+      "updated_At": "2023-08-24T11:22:32.828Z",
       "isActive": "Yes"
     },
     {
       "id": 7,
-      "roleName": "test1",
+      "roleName": "R-54",
       "description": " One solution is to head over to a lorem ipsum or dummy text generator to create that text. ",
       "created_At": "2023-08-08T05:41:19.374Z",
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:22:45.761Z",
       "isActive": "Yes"
     },
     {
       "id": 8,
-      "roleName": "test zahid",
+      "roleName": "R-548",
       "description": "One solution is to head over to a lorem ipsum or dummy text generator to create that text. Alternatively, you can create the text yourself directly in Word.",
       "created_At": "2023-08-08T05:41:29.850Z",
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:22:52.960Z",
       "isActive": "Yes"
     },
     {
       "id": 9,
-      "roleName": "test",
+      "roleName": "R-6584",
       "description": "Sometimes, you might need some boilerplate or filler text in a Word document. ",
       "created_At": "2023-08-08T06:06:52.776Z",
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:23:01.000Z",
       "isActive": "Yes"
     },
     {
       "id": 10,
-      "roleName": "test",
+      "roleName": "R-7845",
       "description": "One solution is to head over to a lorem ipsum or dummy text generator to create that text",
       "created_At": "2023-08-08T06:07:40.974Z",
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:23:09.081Z",
       "isActive": "Yes"
     },
     {
       "id": 11,
-      "roleName": "test",
+      "roleName": "R-4518",
       "description": "Sometimes, you might need some boilerplate or filler text in a Word document. .",
       "created_At": "2023-08-08T06:39:28.512Z",
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:23:20.192Z",
       "isActive": "Yes"
     },
     {
       "id": 12,
-      "roleName": "test dummy",
+      "roleName": "R-dummy",
       "description": "Sometimes, you might need some boilerplate or filler text in a Word document. One solution is to head over to a lorem ipsum or dummy text generator to create that text. Alternatively, you can create the text yourself directly in Word.",
       "created_At": "2023-08-10T09:51:19.439Z",
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:23:29.097Z",
       "isActive": "Yes"
     },
     {
       "id": 13,
-      "roleName": "test dummy",
+      "roleName": "R-321",
       "description": "testing ",
       "created_At": "2023-08-11T09:45:51.688Z",
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:23:35.584Z",
       "isActive": "Yes"
     },
     {
       "id": 14,
-      "roleName": "height",
+      "roleName": "R-989",
       "description": "testing height",
       "created_At": "2023-08-18T08:41:17.296Z",
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:23:43.706Z",
       "isActive": "Yes"
     },
     {
       "id": 15,
-      "roleName": "testing new ",
+      "roleName": "R-520",
       "description": "testing height ",
       "created_At": null,
-      "updated_At": null,
+      "updated_At": "2023-08-24T11:23:51.327Z",
       "isActive": null
     }
   ],
@@ -297,6 +297,107 @@
       "defaultRoleId": "R1",
       "managerId": null,
       "isActive": "0"
+    }
+  ],
+  "Queues": [
+    {
+      "id": 1,
+      "queueCode": "Q-889",
+      "queueName": "rejection Reason",
+      "description": "testing queue Description",
+      "roles": [
+        "R-12",
+        "R-54"
+      ],
+      "queueType": "Background",
+      "createdAt": "2023-08-11T12:52:57.068Z",
+      "updatedAt": "2023-08-24T11:26:05.515Z",
+      "isActive": 1
+    },
+    {
+      "id": 2,
+      "queueCode": "Q-328",
+      "queueName": "test Queue",
+      "description": "machine queues for testing purpose ",
+      "roles": [
+        "R-548",
+        "R-6584"
+      ],
+      "queueType": "Background",
+      "createdAt": "2023-08-24T07:12:46.249Z",
+      "updatedAt": "2023-08-24T11:26:28.866Z",
+      "isActive": 1
+    },
+    {
+      "id": 3,
+      "queueCode": "Q-654",
+      "queueName": "test ques",
+      "description": "testing demo",
+      "roles": [
+        "R-4518",
+        "R-321",
+        "R-989"
+      ],
+      "queueType": "Foreground",
+      "createdAt": "2023-08-24T08:34:07.222Z",
+      "updatedAt": "2023-08-24T11:24:30.346Z",
+      "isActive": 1
+    },
+    {
+      "id": 4,
+      "queueCode": "Q2323",
+      "queueName": "queue test",
+      "description": "test",
+      "roles": [
+        "R-54"
+      ],
+      "queueType": "Background",
+      "createdAt": "2023-08-24T11:20:20.518Z",
+      "updatedAt": "2023-08-24T11:24:44.942Z",
+      "isActive": 1
+    },
+    {
+      "id": 5,
+      "queueCode": "Q-458",
+      "queueName": "New Q",
+      "description": "TEST",
+      "roles": [
+        "R-54"
+      ],
+      "queueType": "Background",
+      "createdAt": "2023-08-24T11:24:57.123Z",
+      "updatedAt": null,
+      "isActive": 1
+    },
+    {
+      "id": 7,
+      "queueCode": "Q-8769",
+      "queueName": "New QX",
+      "description": "TEST",
+      "roles": [
+        "R-12",
+        "R-54",
+        "R-548"
+      ],
+      "queueType": "Foreground",
+      "createdAt": null,
+      "updatedAt": null,
+      "isActive": null
+    },
+    {
+      "id": 8,
+      "queueCode": "Q-787",
+      "queueName": "test queue",
+      "description": "testing demo",
+      "roles": [
+        "R-12",
+        "R-54",
+        "R-548"
+      ],
+      "queueType": "Foreground",
+      "createdAt": "2023-08-24T12:48:39.265Z",
+      "updatedAt": "2023-08-24T12:49:34.817Z",
+      "isActive": 1
     }
   ],
   "PageType": [

@@ -2,11 +2,12 @@
   <div class="card item-box">
     <!-- List Box 1 -->
     <div class="card-header">
-      <div class="input-container">
-        <input type="text" [(ngModel)]="searchTextUnAssigned" placeholder="Search Unassigned {{customText}}" class="form-control">
+      <div class="input-container"> 
         <div class="checkbox-container">
           <mat-checkbox [(ngModel)]="selectAll" (change)="toggleSelectAllUnAssigned()" matTooltip="Select All" style="background-color: white;"></mat-checkbox>
+          <!-- <small>select All</small> -->
         </div>
+        <input type="text" [(ngModel)]="searchTextUnAssigned" placeholder="Search Unassigned {{customText}}" class="form-control">
       </div>
     </div>
     <div class="card-body" >

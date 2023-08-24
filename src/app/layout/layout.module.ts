@@ -21,6 +21,8 @@ import { RejectionReasonModule } from '../rejection-reason/rejection-reason.modu
 import { RejectionReasonRoutingModule } from '../rejection-reason/rejection-reason-routing.module';
 import { PageTypesRoutingModule } from '../page-types/page-types-routing.module';
 import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
+import { QueuesRoutingModule } from '../queues/queues-routing.module';
+import { FieldLibraryRoutingModule } from '../field-library/field-library-routing.module';
 
 
 
@@ -39,7 +41,7 @@ import { BreadCrumbComponent } from './bread-crumb/bread-crumb.component';
     MatSelectModule,MatFormFieldModule,
     UsersRoutingModule,RolesRoutingModule,CustomersRoutingModule,
     OcrEnginesRoutingModule,RejectionReasonRoutingModule,ProjectsRoutingModule,
-    PageTypesRoutingModule
+    PageTypesRoutingModule,QueuesRoutingModule,FieldLibraryRoutingModule
   ],
   exports: [
     HeaderComponent,

@@ -1,0 +1,48 @@
+.card-header{
+    background: #002855;
+    color:white;
+    font-family: 'Calibri';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.button-container button {
+    margin-right: 10px;
+}
+td{
+    color:#1D4F91;
+}
+#roles-heading {
+    display: flex;
+    align-items: center;
+  }
+
+
+  .description-wrapper {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .info-icon {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .description-wrapper:hover .description-text {
+    white-space: normal;
+    overflow: visible;
+  }
+  
+  .description-wrapper:hover .info-icon {
+    display: none;
+  }
+  

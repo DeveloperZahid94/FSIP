@@ -9,6 +9,8 @@ const routes: Routes = [
 { path: 'OcrEngines', loadChildren: () => import('./ocr-engines/ocr-engines.module').then(m => m.OcrEnginesModule) },
 { path: 'RejectionReason', loadChildren: () => import('./rejection-reason/rejection-reason.module').then(m => m.RejectionReasonModule) },
 { path: 'PageTypes', loadChildren: () => import('./page-types/page-types.module').then(m => m.PageTypesModule) },
+{ path: 'Queues', loadChildren: () => import('./queues/queues.module').then(m => m.QueuesModule) },
+{ path: 'FieldLibrary', loadChildren: () => import('./field-library/field-library.module').then(m => m.FieldLibraryModule) },
 ];
 
 @NgModule({
