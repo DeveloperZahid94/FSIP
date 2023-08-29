@@ -25,6 +25,7 @@ import { CustomerOnBoardingComponent } from './customer-on-boarding/customer-on-
 import { AsignUnasignItemsComponent } from './asign-unasign-items/asign-unasign-items.component';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { QueuesOnBoardComponent } from './queues-on-board/queues-on-board.component';
+import { FormsOnboardComponent } from './forms-onboard/forms-onboard.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { QueuesOnBoardComponent } from './queues-on-board/queues-on-board.compon
     CustomerOnBoardingComponent,
     AsignUnasignItemsComponent,
     FilterPipePipe,
-    QueuesOnBoardComponent
+    QueuesOnBoardComponent,
+    FormsOnboardComponent
   ],
   imports: [
     CommonModule,

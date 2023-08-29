@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -20,7 +20,6 @@ export class ViewUserListComponent implements OnInit{
     private _rolesService:RolesServiceService,
     private _userService:UserServiceService,
     private _sBService:SnackBarServiceService,
-    private cdr: ChangeDetectorRef
     ){}
     
    displayedColumns: string[] = ['userName', 'firstName', 'lastName','email','phone','countryCode','locationCode','manager','Action'];
@@ -48,7 +47,7 @@ export class ViewUserListComponent implements OnInit{
    * Method To Open Dialog For Add/Edit Roles based on Action passed  
   */
   public userAction(event:string,ele:any){
-    return this.dialog.open(AddEditUserDialogComponent, {width: '90%', height: '760px',data:{Action:event,dataObj:ele}}).afterClosed()
+    return this.dialog.open(AddEditUserDialogComponent, {width: '90%', height: '620px',data:{Action:event,dataObj:ele}}).afterClosed()
       .subscribe(res => {
         if(res){
           this.userList();

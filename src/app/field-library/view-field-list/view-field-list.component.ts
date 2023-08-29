@@ -6,6 +6,7 @@ import { SnackBarServiceService } from 'src/app/Core/snack-bar-service.service';
 import { AddEditFieldLibraryComponent } from '../add-edit-field-library/add-edit-field-library.component';
 import { CustomerServiceService } from 'src/app/customers/customer-service.service';
 import { ConfirmationDialogComponent } from 'src/app/roles/confirmation-dialog/confirmation-dialog.component';
+import { FieldServiceService } from '../field-service.service';
 
 @Component({
   selector: 'app-view-field-list',
@@ -16,28 +17,28 @@ export class ViewFieldListComponent {
   public roleList:any=[];
   constructor(
     private dialog: MatDialog,
-    private _customerService:CustomerServiceService,
+    private _fieldService:FieldServiceService,
     private _sBService:SnackBarServiceService 
     ){}
 
-  displayedColumns: string[] = [ 'FieldLabel','FieldName','DataType','Action'];
+  displayedColumns: string[] = ['fieldLabel','fieldName','placeholder','controlType','dataType','required','readOnly','Action'];
   dataSource= new MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngOnInit(){
-    // this.customersList();
+     this.fieldList();
   }
 
 
 /** 
 * Method To Open Dialog For Add/Edit customer based on Action passed  
 */
-  public customerAction(event:string,ele:any){
-    return this.dialog.open(AddEditFieldLibraryComponent, {width: '50%', height: '350px',data:{Action:event,dataObj:ele}}).afterClosed()
+  public fieldAction(event:string,ele:any){
+    return this.dialog.open(AddEditFieldLibraryComponent, {width: '90%', height: '590px',data:{Action:event,dataObj:ele}}).afterClosed()
       .subscribe(res => {
         if(res){
-          this.customersList();
+          this.fieldList();
         }
           
       });
@@ -46,8 +47,8 @@ export class ViewFieldListComponent {
   /** 
    * Method To get List of customer  
   */
-  private customersList(){
-    this._customerService.getCustomers().subscribe(res=>{
+  private fieldList(){
+    this._fieldService.getField().subscribe(res=>{
       console.log(res);
       this.dataSource=new MatTableDataSource(res);
       this.dataSource.paginator=this.paginator;
@@ -60,14 +61,14 @@ export class ViewFieldListComponent {
   /** 
    * Method To get delete  customer  
   */
-  public deleteCustomer(id:number){
-    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '210px',data:{Message:'Delete Customer'}}).afterClosed()
+  public deletefield(id:number){
+    return this.dialog.open(ConfirmationDialogComponent, {width: '30%', height: '210px',data:{Message:'Delete Field'}}).afterClosed()
       .subscribe(res => {
         if(res==='Yes'){
-          this._customerService.deleteCustomers(id).subscribe(res=>{
+          this._fieldService.deleteField(id).subscribe(res=>{
             if(res){
-              this._sBService.openSnackBar("Customer Deleted Successfully","done");
-              this.customersList();
+              this._sBService.openSnackBar("Field Deleted Successfully","done");
+              this.fieldList();
             }  
           },err=>{
             console.log(err);

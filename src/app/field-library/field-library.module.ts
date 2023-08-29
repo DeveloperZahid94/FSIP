@@ -17,6 +17,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatSliderModule } from '@angular/material/slider';
 import { LayoutModule } from '../layout/layout.module';
 
 
@@ -34,7 +35,7 @@ import { LayoutModule } from '../layout/layout.module';
     MatInputModule,MatFormFieldModule,
     MatSelectModule,MatIconModule,MatButtonModule,
     MatDialogModule,MatRadioModule,MatCheckboxModule,
-    MatPaginatorModule, MatTableModule,
+    MatPaginatorModule, MatTableModule,MatSliderModule
   ]
 })
 export class FieldLibraryModule { }

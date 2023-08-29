@@ -6,7 +6,7 @@
                 &nbsp;Field Library
             </h2>
             <div class="button-container mt-1 me-2 position-absolute top-0 end-0">
-                <button mat-raised-button id="primaryColor" (click)="customerAction('Add',null)" class="">
+                <button mat-raised-button id="primaryColor" (click)="fieldAction('Add',null)" class="">
                     <mat-icon>add_circle</mat-icon>
                     Add New
                 </button>
@@ -21,23 +21,55 @@
             <div class="mat">
                 <table mat-table [dataSource]="dataSource">
 
-                <!-- Description Column -->
-                <ng-container matColumnDef="FieldLabel">
-                    <th mat-header-cell *matHeaderCellDef style="width:25%;"> FieldLabel </th>
-                    <td mat-cell *matCellDef="let element" style="width:25%;"> {{element.FieldLabel}} </td>
+                <!-- Name FieldName -->
+                <ng-container matColumnDef="fieldName">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Field Name </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.fieldName}} </td>
                 </ng-container>
 
-                <!-- Name Role -->
-                <ng-container matColumnDef="FieldName">
-                    <th mat-header-cell *matHeaderCellDef style="width:25%;"> FieldName </th>
-                    <td mat-cell *matCellDef="let element" style="width:25%;"> {{element.FieldName}} </td>
+                <!-- FieldLabel Column -->
+                <ng-container matColumnDef="fieldLabel">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Label </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.fieldLabel}} </td>
                 </ng-container>
-            
+
+                 <!-- Name Placeholder -->
+                <ng-container matColumnDef="placeholder">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Placeholder </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.placeholder}} </td>
+                </ng-container>
+
+               
+
+                <!-- Name Control Type -->
+                <ng-container matColumnDef="controlType">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Control Type </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.controlType}} </td>
+                </ng-container>
+
+                <!-- Name Control Type -->
+                <ng-container matColumnDef="dataType">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Data Type </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.dataType}} </td>
+                </ng-container>
+
+                <!-- Name Control Type -->
+                <ng-container matColumnDef="readOnly">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Read Only </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.readOnly}} </td>
+                </ng-container>
+
+                 <!-- Name Control Type -->
+                 <ng-container matColumnDef="required">
+                    <th mat-header-cell *matHeaderCellDef style="width:10%;"> Required </th>
+                    <td mat-cell *matCellDef="let element" style="width:10%;"> {{element.required}} </td>
+                </ng-container>
+
                 <ng-container matColumnDef="Action">
                     <th mat-header-cell *matHeaderCellDef> Action </th>
-                    <td mat-cell *matCellDef="let element" style="width:15%;">
-                        <mat-icon style="color:#1D4F91;" (click)="customerAction('Edit',element)">edit</mat-icon>
-                        <mat-icon style="color:#FF7F32;" (click)="deleteCustomer(element.id)">delete</mat-icon>
+                    <td mat-cell *matCellDef="let element" style="width:10%;">
+                        <mat-icon style="color:#1D4F91;" (click)="fieldAction('Edit',element)">edit</mat-icon>
+                        <mat-icon style="color:#FF7F32;" (click)="deletefield(element.id)">delete</mat-icon>
                     </td>
                 </ng-container>
             

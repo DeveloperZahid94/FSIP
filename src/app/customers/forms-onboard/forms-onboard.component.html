@@ -1,0 +1,48 @@
+<div class="container-fluid mt-3">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Form Code</th>
+                    <th>Form Name</th>
+                    <th>Page Types</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width:20%;">
+                        <mat-form-field appearance="fill" id="txtTableEle">
+                            <mat-label>Form Code</mat-label>
+                            <input matInput placeholder="Form Code">
+                            <mat-icon matSuffix>edit</mat-icon>
+                        </mat-form-field>
+                    </td>
+                    <td style="width:20%;">
+                        <mat-form-field appearance="fill" id="txtTableEle" >
+                            <mat-label>Form Name</mat-label>
+                            <input matInput placeholder="Form Name" >
+                            <mat-icon matSuffix>edit</mat-icon>
+                        </mat-form-field>
+                    </td>
+                    <td style="width:45%;">
+                        <mat-form-field appearance="fill" id="txtTableEle">
+                            <mat-label>Select Roles</mat-label>
+                            <mat-select formControlName="roles" multiple>
+                                <mat-option value="{{opt.PageTypeName}}" *ngFor="let opt of pageTypes">
+                                    {{opt.PageTypeName}}
+                                </mat-option>
+                             </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td style="width:15%;">
+                        <div class="mt-3">
+                        <mat-icon style="color:#1D4F91;">edit</mat-icon>
+                        <mat-icon style="color:#FF7F32;">delete</mat-icon>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
