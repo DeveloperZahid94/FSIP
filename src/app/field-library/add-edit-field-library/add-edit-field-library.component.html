@@ -1,7 +1,9 @@
 <div class="container-fluid mt-3">
     <form [formGroup]="fieldForm">
       <div class="px-1">
-        <h1>{{this.data.Action}} Fields</h1><hr>
+        <h1>{{this.data.Action}} Fields</h1>
+        
+        <hr>
         <!-- 'fieldLabel','fieldName','placeholder','allowedChar','notAllowedChar','dataType' -->
     </div>
       <div class="row g-1 no-gutter-row">
@@ -136,116 +138,52 @@
                     </div>
                   </div>
 
-                <div class="row g-1 no-gutter-row">
+                <div class="row mb-3 mt-2">
                     <div class="col-md-6">
-                      <mat-form-field appearance="outline" id="txtFormElements">
-                        <mat-label>Min Length</mat-label>
-                        <input
-                          matInput
-                          placeholder="Enter minLength"
-                          name="minLength"
-                          formControlName="minLength"
-                          required
-                        />
-                        <mat-icon matSuffix>edit</mat-icon>
-                      </mat-form-field>
+                      <div class="slider-label">Min length</div>
+                      <ngx-slider [(value)]="valueMinLen" [options]="optionsMinLen"></ngx-slider>
                     </div>
-                     <div class="col-md-6">
-                        <mat-form-field appearance="outline" id="txtFormElements">
-                            <mat-label>Max Length</mat-label>
-                            <input
-                            matInput
-                            placeholder="Enter maxLength"
-                            name="maxLength"
-                            formControlName="maxLength"
-                            required
-                            />
-                            <mat-icon matSuffix>edit</mat-icon>
-                        </mat-form-field>
-                        </div>
+                    <div class="col-md-6">
+                      <div class="slider-label">Max length</div>
+                      <ngx-slider [(value)]="valueMaxLen" [options]="optionsMaxLen"></ngx-slider>
                     </div>
+                </div>
 
-                    <div class="row g-1 no-gutter-row">
-                        <div class="col-md-6">
-                          <mat-form-field appearance="outline" id="txtFormElements">
-                            <mat-label>Min Range</mat-label>
-                            <input
-                              matInput
-                              placeholder="Enter Min Range"
-                              name="minRange"
-                              formControlName="minRange"
-                              required
-                            />
-                            <mat-icon matSuffix>edit</mat-icon>
-                          </mat-form-field>
-                        </div>
-                         <div class="col-md-6">
-                            <mat-form-field appearance="outline" id="txtFormElements">
-                                <mat-label>Max Range</mat-label>
-                                <input
-                                matInput
-                                placeholder="Enter Max Range"
-                                name="maxRange"
-                                formControlName="maxRange"
-                                required
-                                />
-                                <mat-icon matSuffix>edit</mat-icon>
-                            </mat-form-field>
-                            </div>
-                        </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                      <div class="custom-slider">
+                        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" style="background-color:red;"></ngx-slider>
+                      </div>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end">
+                      <div class="d-flex align-items-center">
+                        <mat-checkbox formControlName="showLabel"></mat-checkbox>
+                        <small class="chkbx me-1">Show Label</small> 
+                      </div>
+                    
+                      <div class="d-flex align-items-center">
+                        <mat-checkbox formControlName="required"></mat-checkbox>
+                        <span class="chkbx me-3">Required</span>
+                      </div>
+                    
+                      <div class="d-flex align-items-center">
+                        <mat-checkbox formControlName="readOnly"></mat-checkbox>
+                        <small class="chkbx me-3">Readonly</small>
+                      </div>
+                    
+                      <div class="d-flex align-items-center">
+                        <mat-checkbox formControlName="multiSelect"></mat-checkbox>
+                        <small class="chkbx me-3">MultiSelect</small>
+                      </div>
+                    </div> 
+                </div>
 
-                        <div class="row g-1 no-gutter-row">
-                            <div class="col-md-12">
-                               
-                                <mat-checkbox ></mat-checkbox>
-                                <span class="chkbx me-3">Required</span>                             
-                                <mat-checkbox></mat-checkbox>
-                                  <small class="chkbx me-3">MultiSelect</small>   
-
-                                  <mat-checkbox></mat-checkbox>
-                                  <small class="chkbx me-3">Readonly</small>   
-
-                                  <mat-checkbox></mat-checkbox>
-                                  <small class="chkbx me-3">Show Label</small> 
-                            </div>
-                             
-                          </div>
-        
-       
-
-                          <div class="slider-container">
-                            <input
-                              type="range"
-                              class="slider"
-                              min="0"
-                              max="100"
-                              step="5"
-                              value="0"
-                              id="mySlider"
-                              (input)="updateSliderValue($event)"
-                            />
-                            <div class="slider-value" id="sliderValue">{{ sliderValue }}</div>
-                          </div>
-
-
-                          <div class="form-group">
-                            <label for="rangeSlider">Range Slider</label>
-                            <input type="range"
-                                   class="form-control-range"
-                                   id="rangeSlider"
-                                   [min]="minValue"
-                                   [max]="maxValue"
-                                   [(ngModel)]="sliderValue1">
-                            <input type="range"
-                                   class="form-control-range"
-                                   id="rangeSlider"
-                                   [min]="minValue"
-                                   [max]="maxValue"
-                                   [(ngModel)]="sliderValue2">
-                          </div>
-                          
-                          <p>Slider 1 Value: {{ sliderValue1 }}</p>
-                          <p>Slider 2 Value: {{ sliderValue2 }}</p>
+                <div class="row g-1 no-gutter-row">
+                    <div class="col-md-12">
+                      
+                    </div>
+                </div>
+ 
   <hr>
       <div class="Action"> 
         <button mat-raised-button id="warnColor" (click)="closeDialog()" class="float-end p-3">

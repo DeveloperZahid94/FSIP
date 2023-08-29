@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { SnackBarServiceService } from 'src/app/Core/snack-bar-service.service';
 import { FieldServiceService } from '../field-service.service';
+import { Options,LabelType } from 'ngx-slider-v2';
 
 @Component({
   selector: 'app-add-edit-field-library',
@@ -13,6 +14,36 @@ export class AddEditFieldLibraryComponent {
   public fieldForm:any;
   sliderValue: number = 0;
 
+  minValue: number = 5;
+  maxValue: number = 50;
+  options: Options = {
+    floor: 0,
+    ceil: 100,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          return "<b>Min Range:</b> " + value;
+        case LabelType.High:
+          return "<b>Max Range:</b> " + value;
+        default:
+          return "" + value;
+      }
+    }
+  };
+
+  valueMinLen: number = 0;
+  optionsMinLen: Options = {
+    floor: 0,
+    ceil: 50,
+    // translate: (value: number): string => {
+    //   return "<b>Min Length:</b> " + value; // Combine value and label
+    // }
+  };
+  valueMaxLen: number = 100;
+  optionsMaxLen: Options = {
+    floor: 0,
+    ceil: 250
+  };
 
 
 
@@ -48,8 +79,9 @@ export class AddEditFieldLibraryComponent {
       allowedChar:new FormControl(this.data?.dataObj ? this.data.dataObj?.allowedChar:null,[Validators.required]),
       notAllowedChar:new FormControl(this.data?.dataObj ? this.data.dataObj?.allowedChar:null,[Validators.required]),
       multiSelect:new FormControl(this.data?.dataObj ? this.data.dataObj?.multiSelect:null,[Validators.required]),
+      showLabel:new FormControl(this.data?.dataObj ? this.data.dataObj?.showLabel:null,[Validators.required]),
       required:new FormControl(this.data?.dataObj ? this.data.dataObj?.required:null,[Validators.required]),
-      readOnly:new FormControl(this.data?.dataObj ? this.data.dataObj?.readOnly:null,[Validators.required]),
+      readOnly:new FormControl(this.data?.dataObj ? this.data.dataObj?.readOnly:true,[Validators.required]),
       maxRange:new FormControl(this.data?.dataObj ? this.data.dataObj?.maxRange:null,[Validators.required]),
       minRange:new FormControl(this.data?.dataObj ? this.data.dataObj?.minRange:null,[Validators.required]),
       minLength:new FormControl(this.data?.dataObj ? this.data.dataObj?.minLength:null,[Validators.required]),
@@ -108,6 +140,14 @@ export class AddEditFieldLibraryComponent {
   }
 
 
+  getHandleColor(): string {
+    // Your logic to determine the color
+    if (this.minValue < 50) {
+      return 'red';
+    } else {
+      return 'green';
+    }
+  }
 
 
  /** 

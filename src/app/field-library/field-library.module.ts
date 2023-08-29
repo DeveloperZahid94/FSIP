@@ -19,6 +19,7 @@ import { MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
 import { LayoutModule } from '../layout/layout.module';
+import { NgxSliderModule } from 'ngx-slider-v2';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { LayoutModule } from '../layout/layout.module';
   imports: [
     CommonModule,
     FieldLibraryRoutingModule,
-    LayoutModule,
+    LayoutModule,NgxSliderModule,
     FormsModule,ReactiveFormsModule,
     MatInputModule,MatFormFieldModule,
     MatSelectModule,MatIconModule,MatButtonModule,

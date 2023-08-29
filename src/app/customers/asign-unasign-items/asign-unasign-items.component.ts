@@ -27,6 +27,7 @@ export class AsignUnasignItemsComponent implements OnInit {
     this._customerService.screenText.subscribe(res=>{
       this.customText=res;
     })
+
   }
 
   /** to fetch which key need to be displayed
@@ -36,9 +37,12 @@ export class AsignUnasignItemsComponent implements OnInit {
   getKeyUnSelected(item: any): string {
     if (this.customText === 'users') {
       return item.userName;
-    } else {
+    } else if(this.customText === 'forms'){
+      return item.pageTypeCode;
+    }else {
       return item.reason;
     }
+
   }
   
 
@@ -50,7 +54,9 @@ export class AsignUnasignItemsComponent implements OnInit {
     getKeyForSelected(item: any): string {
       if (this.customText === 'users') {
         return item.userName;
-      } else {
+      }else if(this.customText === 'forms'){
+          return item.pageTypeCode;
+        }else{
         return item.reason;
       }
     }

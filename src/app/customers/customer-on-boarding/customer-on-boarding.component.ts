@@ -88,6 +88,7 @@ private _pageService:PageTypeServiceService,
     this._pageService.getPageType().subscribe((res:[])=>{
       console.log(res);
       this.pageList=res;
+      this.dataSource=res
     })
   }
 
@@ -107,6 +108,11 @@ private _pageService:PageTypeServiceService,
         case 3:{
           this._customerService.screenText.next('reason');
           this.getReasons();
+          break;
+        }
+        case 5:{
+          this._customerService.screenText.next('forms');
+          this.getPageTypes();
           break;
         }
         default:
