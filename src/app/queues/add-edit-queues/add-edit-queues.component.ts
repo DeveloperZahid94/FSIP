@@ -14,6 +14,15 @@ import { RolesServiceService } from 'src/app/roles/roles-service.service';
 export class AddEditQueuesComponent {
   public queueForm:any;
   public roles:any[] = [];
+
+  selectedCar: any;
+
+  cars = [
+      { id: 1, name: 'Volvo' },
+      { id: 2, name: 'Saab' },
+      { id: 3, name: 'Opel' },
+      { id: 4, name: 'Audi' },
+  ];
   
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,

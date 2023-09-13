@@ -18,6 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { LayoutModule } from '../layout/layout.module';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { LayoutModule } from '../layout/layout.module';
   imports: [
     CommonModule,
     QueuesRoutingModule,
-    LayoutModule,
+    LayoutModule,NgSelectModule,
     FormsModule,ReactiveFormsModule,
     MatInputModule,MatFormFieldModule,
     MatSelectModule,MatIconModule,MatButtonModule,
